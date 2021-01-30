@@ -14,6 +14,7 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    `gatsby-plugin-sass`,
     `gatsby-plugin-advanced-sitemap`,
     // {
     //   resolve: `gatsby-plugin-canonical-urls`,
