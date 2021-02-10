@@ -1,29 +1,6 @@
 import React from "react"
 import debounce from "lodash/debounce"
-import styled from "styled-components"
 
-const StyledButton = styled.button`
-  position: fixed;
-  right: 0.5rem;
-  bottom: 0.5rem;
-  z-index: 2000;
-  animation: fadeIn 0.5s linear;
-  opacity: 0.7;
-  :hover {
-    opacity: 1;
-  }
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 0.5;
-    }
-  }
-`
-const StyledArrowSvg = styled.svg`
-  transform: rotateX(180deg);
-`
 const ScrollTopButton = () => {
   const [showScroll, setShowScroll] = React.useState(false)
   React.useEffect(() => {
@@ -48,20 +25,24 @@ const ScrollTopButton = () => {
   }
 
   return showScroll ? (
-    <StyledButton className="btn btn-dark" onClick={scrollTop}>
-      <StyledArrowSvg
+    <button
+      className="bg-gray-600 hover:bg-gray-500 px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 animate-fade"
+      onClick={scrollTop}
+    >
+      <svg
         width="30"
         height="30"
         viewBox="0 0 56 30"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
+        className="transform rotate-180"
       >
         <path
           d="M55.2 1.4L53.8 0L27.9 26.5L1.4 0.599998L0 2L27.9 29.3L55.2 1.4Z"
           fill="white"
         />
-      </StyledArrowSvg>
-    </StyledButton>
+      </svg>
+    </button>
   ) : (
     ""
   )

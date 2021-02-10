@@ -4,12 +4,12 @@ import { graphql } from "gatsby"
 import Layout from "../components/reusables/Layout"
 import SEO from "../components/reusables/seo"
 
-export default function Home({ data }) {
+export default function SecondPage({ data }) {
   // content slices
   const slices = data.sections.main.slices
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Second Page" />
       <Layout>
         <section id="main" className="my-10">
           <h1 className="text-center font-bold text-4xl">{slices[0]}</h1>
@@ -31,7 +31,7 @@ export const query = graphql`
     imageName: file(name: { eq: "image-name" }) {
       ...FluidImage
     }
-    sections: indexContentJson {
+    sections: secondPageContentJson {
       main {
         slices
       }

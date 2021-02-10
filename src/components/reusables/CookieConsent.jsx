@@ -10,12 +10,17 @@ const CookieConsent = () => {
   }
   return !cookieConcent ? (
     <div
-      className="alert alert-dark fixed-bottom small m-0 text-center p-1"
+      className="bg-gray-300 w-full text-xs z-40 fixed bottom-0 small m-0 text-center py-2 "
       role="alert"
     >
       We are using cookies to ensure best experience on our website.{" "}
-      <Link to="/policies/privacy-policy">Learn more</Link>{" "}
-      <button className="btn btn-sm btn-outline-dark" onClick={handleClick}>
+      <Link to="/policies/privacy-policy" className="text-blue-500">
+        Learn more
+      </Link>{" "}
+      <button
+        className="border border-black p-1 rounded-sm"
+        onClick={handleClick}
+      >
         Got it!
       </button>
     </div>

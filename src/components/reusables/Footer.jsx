@@ -2,21 +2,45 @@ import React from "react"
 import { Link } from "gatsby"
 
 const Footer = () => {
-  const links = [{ name: "Home", to: "/", id: 0 }]
+  const links = [
+    {
+      id: 0,
+      text: "Home",
+      slug: "/",
+    },
+    {
+      id: 1,
+      text: "Second Page",
+      slug: "/second-page",
+    },
+    {
+      id: 2,
+      text: "Third Page",
+      slug: "/third-page",
+    },
+    {
+      id: 3,
+      text: "Forth Page",
+      slug: "/forth-page",
+    },
+    {
+      id: 4,
+      text: "Privacy Policy",
+      slug: "/policies/privacy-policy/",
+    },
+  ]
   return (
-    <footer className="mt-auto mx-lg-divider pb-5">
-      <div className="row">
-        <div className="col-10 col-xl-8 text-center mx-auto">
-          <nav className="row flex-column flex-lg-row justify-content-between align-items-center mx-auto mb-3 small border-top border-bottom pt-3">
-            {links.map(link => (
-              <Link key={link.id} className="text-secondary mb-3" to={link.to}>
-                {link.name}
-              </Link>
-            ))}
-          </nav>
-          <div className="text-secondary">
-            © 2020 Lior Cohen All rights reserved
-          </div>
+    <footer className="mt-auto pb-5">
+      <div className="w-5/6 lg:w-2/3 text-center mx-auto">
+        <nav className="flex flex-col lg:flex-row items-center mx-auto text-sm border-t border-b py-3 lg:space-x-5">
+          {links.map(link => (
+            <Link key={link.id} className="text-gray-500" to={link.slug}>
+              {link.text}
+            </Link>
+          ))}
+        </nav>
+        <div className="text-gray-500 mt-3">
+          © 2020 Lior Cohen All rights reserved
         </div>
       </div>
     </footer>

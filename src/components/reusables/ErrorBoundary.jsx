@@ -1,10 +1,6 @@
 import React from "react"
 import Layout from "./Layout"
-import styled from "styled-components"
 
-const Section = styled.section`
-  min-height: 500px;
-`
 class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props)
@@ -28,15 +24,10 @@ class ErrorBoundary extends React.Component {
       // You can render any custom fallback UI
       return (
         <Layout>
-          <Section
-            id="error-boundary"
-            className="row mx-lg-divider align-items-center"
-          >
-            <div className="col-11 mx-auto text-center">
-              <h1 className="mb-3">Something went wrong</h1>
-              <p>Please try to refresh the page</p>
-            </div>
-          </Section>
+          <section id="error-boundary" className="mt-32 text-center mx-auto">
+            <h1 className="text-4xl font-bold mb-3">Something went wrong</h1>
+            <p>Please try to refresh the page</p>
+          </section>
         </Layout>
       )
     }

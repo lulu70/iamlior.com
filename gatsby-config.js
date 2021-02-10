@@ -14,6 +14,7 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    `gatsby-plugin-postcss`,
     `gatsby-plugin-advanced-sitemap`,
     // {
     //   resolve: `gatsby-plugin-canonical-urls`,
@@ -21,7 +22,6 @@ module.exports = {
     //     siteUrl: ``,
     //   },
     // },
-    `gatsby-plugin-styled-components`,
     `gatsby-transformer-json`,
     // {
     //   resolve: `gatsby-plugin-create-client-paths`,
