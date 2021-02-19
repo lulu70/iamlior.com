@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import MainContext from "../../context/MainContext"
+import FocusedButton from "./FocusedButton"
 
 const CookieConsent = () => {
   const { store, setCookieConcent } = React.useContext(MainContext)
@@ -17,12 +18,12 @@ const CookieConsent = () => {
       <Link to="/policies/privacy-policy" className="text-blue-500">
         Learn more
       </Link>{" "}
-      <button
+      <FocusedButton
         className="border border-black p-1 rounded-sm"
         onClick={handleClick}
       >
         Got it!
-      </button>
+      </FocusedButton>
     </div>
   ) : (
     ""

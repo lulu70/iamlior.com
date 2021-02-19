@@ -9,19 +9,6 @@ module.exports = {
       spacing: {
         "16/9": "56.25%",
       },
-      animation: {
-        fade: "fade 0.5s linear",
-      },
-      keyframes: {
-        fade: {
-          "0%": {
-            opacity: 0,
-          },
-          "100%": {
-            opacity: 0.5,
-          },
-        },
-      },
     },
   },
   variants: {
