@@ -1,12 +1,12 @@
 import React from "react"
 import "../../../src/styles/global.css"
 import ErrorBoundary from "./ErrorBoundary"
-import ContextProvider from "../../context/ContextProvider"
+import MainContextProvider from "../../context/MainContextProvider"
 const SiteWrapper = ({ children }) => {
   return (
-    <ContextProvider>
+    <MainContextProvider>
       <ErrorBoundary>{children}</ErrorBoundary>
-    </ContextProvider>
+    </MainContextProvider>
   )
 }
 
