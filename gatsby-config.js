@@ -14,6 +14,22 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        plugins: [`gatsby-remark-images`],
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1920,
+              withWebp: true,
+            },
+          },
+        ],
+      },
+    },
     `gatsby-plugin-postcss`,
     `gatsby-plugin-advanced-sitemap`,
     // {
@@ -22,7 +38,6 @@ module.exports = {
     //     siteUrl: ``,
     //   },
     // },
-    `gatsby-transformer-json`,
     // {
     //   resolve: `gatsby-plugin-create-client-paths`,
     //   // options: { prefixes: [`/products/*`, `/account/*`] },
@@ -38,8 +53,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: `content`,
-        path: `${__dirname}/content`,
+        name: `mdx`,
+        path: `${__dirname}/src/mdx`,
       },
     },
     `gatsby-transformer-sharp`,
