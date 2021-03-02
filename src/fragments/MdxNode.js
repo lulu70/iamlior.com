@@ -6,11 +6,14 @@ export const fragment = graphql`
     childMdx {
       id
       body
-      # fileRelativePath
-      # rawFrontmatter
-      # rawMdxBody
+      fileRelativePath
+      rawFrontmatter
+      rawMdxBody
       frontmatter {
         title
+        image {
+          ...FluidImage
+        }
       }
     }
   }
