@@ -14,6 +14,7 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,

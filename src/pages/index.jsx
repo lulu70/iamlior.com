@@ -2,7 +2,6 @@ import React from "react"
 import Layout from "../components/reusables/Layout"
 import SEO from "../components/reusables/seo"
 import { StaticImage } from "gatsby-plugin-image"
-import { staticImageProps } from "../helpers/constants"
 
 export default function Home() {
   return (
@@ -16,7 +15,8 @@ export default function Home() {
               <StaticImage
                 src="../images/image-name.jpg"
                 alt="image-name"
-                {...staticImageProps}
+                placeholder="none"
+                formats={["auto", "webp", "avif"]}
               />
             </div>
           </div>
