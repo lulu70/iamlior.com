@@ -4,33 +4,6 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
-const tinacms = {
-  resolve: "gatsby-plugin-tinacms",
-  options: {
-    // The CMS will be disabled on your production site
-    enabled: process.env.NODE_ENV !== "production",
-    sidebar: {
-      position: "overlay",
-    },
-    // toolbar: true,
-    plugins: [
-      "gatsby-tinacms-mdx",
-      {
-        resolve: "gatsby-tinacms-git",
-        options: {
-          // pathToRepo: REPO_ABSOLUTE_PATH,
-          // pathToContent: "/",
-          defaultCommitMessage: "Edited with TinaCMS",
-          defaultCommitName: "TinaCMS",
-          sshKey: process.env.SSH_KEY,
-          // defaultCommitEmail: "git@tinacms.org",
-          pushOnCommit: true,
-        },
-      },
-    ],
-  },
-}
-
 module.exports = {
   /* Your site config here */
   siteMetadata: {
@@ -41,10 +14,6 @@ module.exports = {
     image: "/image-name.jpg",
   },
   plugins: [
-    ...(process.env.CI_APPLICATION_ENVIRONMENT === "development_local"
-      ? [bundleAnalyzer]
-      : []),
-    ...(process.env.NODE_ENV === "development" ? [tinacms] : []),
     {
       resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
       options: {

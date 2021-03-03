@@ -3,13 +3,10 @@ import GatsbyImage from "gatsby-image"
 import { graphql } from "gatsby"
 import Layout from "../components/reusables/Layout"
 import SEO from "../components/reusables/seo"
-import { useMdxForm, usePlugin } from "../tinaCms/tinaProxy"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import pageTemplateFormOptions from "../tinaCms/pageTemplateFormOptions"
 export default function Home({ data }) {
-  const [tinaMdx, form] = useMdxForm(data.mdx.childMdx, pageTemplateFormOptions)
-  const mdx = tinaMdx || data.mdx.childMdx
-  usePlugin(form)
+  const mdx = data.mdx.childMdx
   return (
     <>
       <SEO title={mdx.frontmatter.title} />
