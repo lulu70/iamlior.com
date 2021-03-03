@@ -1,3 +1,6 @@
+import React from "react"
+import { ImageField } from "./tinaProxy"
+
 const pageTemplateFormOptions = {
   fields: [
     {
@@ -10,7 +13,11 @@ const pageTemplateFormOptions = {
       label: "Image",
       name: "frontmatter.image",
       description: "Image",
-      component: "image",
+      component: props => (
+        <div className="w-1/2">
+          <ImageField {...props} />
+        </div>
+      ),
       clearable: true,
       parse: media => {
         if (!media) return ""

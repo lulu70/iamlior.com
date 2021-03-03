@@ -29,8 +29,5 @@ export const query = graphql`
     imageName: file(name: { eq: "image-name" }) {
       ...FluidImage
     }
-    # mdx: file(name: { eq: "home" }) {
-    #   ...MdxNode
-    # }
   }
 `
