@@ -9,7 +9,7 @@ export const fragment = graphql`
       frontmatter {
         title
         image {
-          ...FluidImage
+          ...NewGatsbyImage
         }
       }
     }

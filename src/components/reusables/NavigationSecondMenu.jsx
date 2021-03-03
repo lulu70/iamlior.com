@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
-
+import { StaticImage } from "gatsby-plugin-image"
+import { staticImageProps } from "../../helpers/constants"
 const NavigationSecondMenu = ({ className, mainNavIsOpen }) => {
   const links = [
     { id: 0, text: "Account Settings", slug: "/" },
@@ -31,10 +32,11 @@ const NavigationSecondMenu = ({ className, mainNavIsOpen }) => {
             setIsOpen(isOpen => !isOpen)
           }}
         >
-          <img
+          <StaticImage
             className="h-full w-full object-cover"
             src="https://placekitten.com/50/50"
             alt="cat avatar"
+            {...staticImageProps}
           />
         </button>
         {isOpen && (
@@ -68,10 +70,11 @@ const NavigationSecondMenu = ({ className, mainNavIsOpen }) => {
           className="px-2 py-5 lg:hidden border-t border-gray-800"
         >
           <div className="flex items-center">
-            <img
+            <StaticImage
               className="h-8 w-8 rounded-full object-cover border-2 border-gray-600"
               src="https://placekitten.com/50/50"
               alt="avatar"
+              {...staticImageProps}
             />
             <span className="ml-3 text-white font-semibold text-xs">
               Lior Cohen

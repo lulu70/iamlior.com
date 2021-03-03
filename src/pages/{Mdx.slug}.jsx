@@ -1,12 +1,12 @@
 import React from "react"
-import GatsbyImage from "gatsby-image"
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { graphql } from "gatsby"
 import Layout from "../components/reusables/Layout"
 import SEO from "../components/reusables/seo"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 
 export default function Home({ data }) {
   const mdx = data.mdx.childMdx
+  const image = getImage(mdx.frontmatter.image)
   return (
     <>
       <SEO title={mdx.frontmatter.title} />
@@ -17,10 +17,7 @@ export default function Home({ data }) {
           </h1>
           <div className="flex flex-col lg:flex-row">
             <div className="w-9/12 lg:w-1/3 mx-auto mt-10">
-              <GatsbyImage
-                fluid={mdx.frontmatter.image.childImageSharp.fluid}
-                alt={mdx.frontmatter.image.name}
-              />
+              <GatsbyImage image={image} alt={mdx.frontmatter.image.name} />
             </div>
           </div>
         </section>

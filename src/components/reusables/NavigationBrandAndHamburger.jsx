@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import FocusedButton from "./FocusedButton"
-
+import { StaticImage } from "gatsby-plugin-image"
 const NavigationBrandAndHamburger = ({ isOpen, setIsOpen }) => {
   return (
     <div
@@ -10,10 +10,12 @@ const NavigationBrandAndHamburger = ({ isOpen, setIsOpen }) => {
     >
       <div id="brand-container">
         <Link to="/">
-          <img
-            className="h-12 rounded-full"
+          <StaticImage
+            className="w-12 h-12 rounded-full"
             src="https://placekitten.com/250/250"
             alt="cat avatar"
+            placeholder="none"
+            formats={["auto", "webp", "avif"]}
           />
         </Link>
       </div>
