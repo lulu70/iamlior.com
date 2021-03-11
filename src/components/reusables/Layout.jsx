@@ -10,7 +10,7 @@ const Layout = ({ children }) => {
       className="relative overflow-hidden flex flex-col min-h-screen hd:max-w-screen-hd hd:m-auto font-spaceMono"
     >
       <Navigation />
-      <main className="container-fluid">{children}</main>
+      <main className="lg:w-3/4 lg:mx-auto">{children}</main>
       <Footer />
       <CookieConsent />
       <ScrollTopButton />
