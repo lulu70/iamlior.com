@@ -3,6 +3,7 @@ import React from "react"
 import PersonSVG from "../../reusables/PersonSVG"
 import styled from "styled-components"
 import tw from "twin.macro"
+import SectionHeader from "../../reusables/SectionHeader"
 const MdxWrapper = styled.div`
   ${tw`mt-5`}
   p {
@@ -16,9 +17,9 @@ const About = ({ data }) => {
     frontmatter: { title },
   } = data.about.childMdx
   return (
-    <div className="flex  mt-48">
+    <section id="about" className="flex mt-48">
       <div className="flex-1">
-        <h3 className="text-3xl">{title}</h3>
+        <SectionHeader>{title}</SectionHeader>
         <MdxWrapper>
           <MDXRenderer>{body}</MDXRenderer>
         </MdxWrapper>
@@ -28,7 +29,7 @@ const About = ({ data }) => {
         </p> */}
       </div>
       <PersonSVG className="bg-gradient-to-br from-gray-500 to-black w-2/5 rounded-2xl pt-5" />
-    </div>
+    </section>
   )
 }
 
