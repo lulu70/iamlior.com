@@ -1,15 +1,14 @@
 import React from "react"
-import NavigationSecondMenu from "./NavigationSecondMenu"
-import NavigationNav from "./NavigationNav"
-import NavigationBrandAndHamburger from "./NavigationBrandAndHamburger"
+import NavigationMenu from "./NavigationMenu"
+import { Link } from "gatsby"
 
 const Navigation = () => {
-  const [isOpen, setIsOpen] = React.useState(false)
   return (
-    <header className=" bg-gray-900 z-50 lg:flex lg:px-4 lg:py-3 lg:items-center">
-      <NavigationBrandAndHamburger setIsOpen={setIsOpen} isOpen={isOpen} />
-      <NavigationNav isOpen={isOpen} />
-      <NavigationSecondMenu mainNavIsOpen={isOpen} />
+    <header className="z-50 flex mt-10">
+      <Link to="/" className="flex text-4xl font-semibold">
+        Lior Cohen
+      </Link>
+      <NavigationMenu />
     </header>
   )
 }
