@@ -5,15 +5,17 @@ import { graphql } from "gatsby"
 import Hero from "../components/pages-components/index/Hero"
 import About from "../components/pages-components/index/About"
 import Tech from "../components/pages-components/index/Tech"
+import MyWork from "../components/pages-components/index/MyWork"
 
 export default function Home({ data }) {
   return (
     <>
       <SEO title="Home" />
       <Layout>
-        <Hero data={data} />
-        <About data={data} />
-        <Tech data={data} />
+        <Hero data={data.hero} />
+        <About data={data.about} />
+        <Tech data={data.tech} />
+        <MyWork data={data.myWork} projects={data.projects} />
       </Layout>
     </>
   )
@@ -52,6 +54,37 @@ export const query = graphql`
         }
         frontmatter {
           title
+        }
+      }
+    }
+    myWork: file(relativePath: { eq: "index/my-work/my-work.mdx" }) {
+      childMdx {
+        frontmatter {
+          title
+        }
+      }
+    }
+    projects: allFile(
+      filter: {
+        childMdx: { fileAbsolutePath: { regex: "/index/my-work/projects/" } }
+      }
+      sort: { fields: childrenMdx___frontmatter___position }
+    ) {
+      nodes {
+        id
+        childMdx {
+          frontmatter {
+            title
+            category
+            emoji
+            screenshot {
+              ...NewGatsbyImage
+            }
+            external
+            tags
+            visible
+          }
+          body
         }
       }
     }

@@ -2,7 +2,7 @@ import React from "react"
 import SocialLinks from "../../reusables/SocialLinks"
 
 const Hero = ({ data }) => {
-  const { greetings, title, subtitle, links } = data.hero.childMdx.frontmatter
+  const { greetings, title, subtitle, links } = data.childMdx.frontmatter
   return (
     <section id="hero" className="mt-40">
       <h1 className="text-5xl">

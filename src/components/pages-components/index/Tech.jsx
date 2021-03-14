@@ -3,7 +3,7 @@ import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Tech = ({ data }) => {
-  const mdx = data.tech.childMdx
+  const mdx = data.childMdx
   const title = mdx.frontmatter.title
   const links = mdx.exports.links
   return (

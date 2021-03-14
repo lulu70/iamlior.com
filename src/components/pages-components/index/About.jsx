@@ -15,7 +15,7 @@ const About = ({ data }) => {
   const {
     body,
     frontmatter: { title },
-  } = data.about.childMdx
+  } = data.childMdx
   return (
     <section id="about" className="flex mt-48">
       <div className="flex-1">
