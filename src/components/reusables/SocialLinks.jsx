@@ -27,7 +27,7 @@ const SocialLinks = ({ links: linksProp }) => {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="bg-gray-100 border-2 border-black px-3 py-1 rounded-full w-36 text-center flex justify-between"
+          className="bg-gray-200 border-2 border-black px-3 py-1 rounded-full w-36 text-center flex justify-between"
         >
           <span>{displayName}</span>
           {Icon && <Icon className="w-5" />}
