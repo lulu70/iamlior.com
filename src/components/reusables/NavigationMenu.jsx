@@ -2,13 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import FocusedButton from "./FocusedButton"
 
+export const links = [
+  { id: 0, text: "About Me", slug: "/#about" },
+  { id: 1, text: "Tech I Use", slug: "/#tech" },
+  { id: 2, text: "My Work", slug: "/#my-work" },
+  { id: 3, text: "Lets Talk", slug: "/#lets-talk" },
+]
 const NavigationMenu = ({ className }) => {
-  const links = [
-    { id: 0, text: "About Me", slug: "#about" },
-    { id: 1, text: "Tech", slug: "#tech" },
-    { id: 2, text: "My Work", slug: "#my-work" },
-    { id: 2, text: "Lets Talk", slug: "#lets-talk" },
-  ]
   const [isOpen, setIsOpen] = React.useState(false)
   React.useEffect(() => {
     function handleKeydown(e) {
@@ -64,15 +64,13 @@ const NavigationMenu = ({ className }) => {
               onClick={() => setIsOpen(false)}
               aria-label="layout"
             />
-            <div
-              id="links-on-desktop"
-              className="mt-2 py-2 bg-white rounded-lg w-48 shadow-xl absolute right-0"
-            >
+            <div className="mt-2 py-2 bg-white rounded-lg w-48 shadow-xl absolute right-0">
               {links.map(({ id, text, slug }) => (
                 <Link
                   key={id}
                   to={slug}
-                  className="block px-4 py-2 text-gray-800 hover:bg-gray-900 hover:text-white"
+                  onClick={() => setIsOpen(false)}
+                  className="block px-4 py-2 text-gray-800 hover:bg-black hover:text-white"
                 >
                   {text}
                 </Link>

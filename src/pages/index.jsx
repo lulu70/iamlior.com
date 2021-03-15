@@ -6,6 +6,7 @@ import Hero from "../components/pages-components/index/Hero"
 import About from "../components/pages-components/index/About"
 import Tech from "../components/pages-components/index/Tech"
 import MyWork from "../components/pages-components/index/MyWork"
+import LetsTalk from "../components/pages-components/index/LetsTalk"
 
 export default function Home({ data }) {
   return (
@@ -16,6 +17,7 @@ export default function Home({ data }) {
         <About data={data.about} />
         <Tech data={data.tech} />
         <MyWork data={data.myWork} projects={data.projects} />
+        <LetsTalk data={data.letsTalk} />
       </Layout>
     </>
   )
@@ -29,7 +31,6 @@ export const query = graphql`
           greetings
           title
           subtitle
-          links
         }
       }
     }
@@ -85,6 +86,19 @@ export const query = graphql`
             visible
           }
           body
+        }
+      }
+    }
+    letsTalk: file(relativePath: { eq: "index/lets-talk/lets-talk.mdx" }) {
+      childMdx {
+        body
+        frontmatter {
+          title
+          profileImage {
+            ...NewGatsbyImage
+          }
+          email
+          name
         }
       }
     }

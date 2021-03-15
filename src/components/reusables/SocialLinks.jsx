@@ -2,7 +2,7 @@ import React from "react"
 import FacebookIcon from "./FacebookIcon"
 import GithubIcon from "./GithubIcon"
 
-const SocialLinks = ({ links: linksProp }) => {
+const SocialLinks = () => {
   const links = [
     {
       id: 0,
@@ -18,9 +18,10 @@ const SocialLinks = ({ links: linksProp }) => {
       url: "https://www.facebook.com/lior2",
       icon: FacebookIcon,
     },
-  ].filter(link => linksProp.includes(link.name))
+  ]
+
   return (
-    <div className="inline-flex space-x-5 mt-8">
+    <div className="inline-flex space-x-5 mt-10">
       {links.map(({ id, displayName, url, icon: Icon }) => (
         <a
           key={id}

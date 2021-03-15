@@ -2,14 +2,14 @@ import React from "react"
 import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { Link } from "gatsby"
+import UnderlineText from "../../reusables/UnderlineText"
 
 const MyWork = ({ data, projects }) => {
   const title = data.childMdx.frontmatter.title
   return (
     <section id="my-work" className="mt-48">
       <SectionHeader>{title}</SectionHeader>
-      <div className="flex lg:flex-col overflow-x-scroll">
+      <div className="flex lg:flex-col overflow-x-scroll mt-24 space-y-32">
         {projects.nodes.map(
           ({
             childMdx: {
@@ -27,21 +27,19 @@ const MyWork = ({ data, projects }) => {
             id,
           }) =>
             visible && (
-              <div className="flex flex-col-reverse lg:flex-row lg:justify-between justify-end  lg:mr-0 mt-32 mr-20">
+              <div
+                key={id}
+                className="flex flex-col-reverse lg:flex-row lg:justify-between justify-end  lg:mr-0 mr-20"
+              >
                 <div className="mt-20 lg:mt-0">
                   <div className="lg:w-9/12 mx-auto lg:mx-0">
-                    <span className="mr-5">{emoji}</span>
+                    <span className="mr-2">{emoji}</span>
                     <span>{category}</span>
                     <h4 className="text-xl font-semibold mt-1">{title}</h4>
                     <MDXRenderer>{body}</MDXRenderer>
                     <div className="mt-12 flex flex-wrap">
                       {tags.map(tag => (
-                        <div className="relative mr-4">
-                          <span className="bg-gray-200 absolute bottom-0 right-0 left-0 h-2" />
-                          <span className="relative" key={tag}>
-                            {tag}
-                          </span>
-                        </div>
+                        <UnderlineText key={tag}>{tag}</UnderlineText>
                       ))}
                     </div>
                     <a
@@ -68,11 +66,18 @@ const MyWork = ({ data, projects }) => {
                   </div>
                 </div>
                 <div className="flex lg:justify-end">
-                  <GatsbyImage
-                    image={getImage(screenshot)}
-                    alt={title}
-                    className="shadow-xl rounded-3xl w-96 h-72"
-                  />
+                  <a
+                    className="block"
+                    href={external}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <GatsbyImage
+                      image={getImage(screenshot)}
+                      alt={title}
+                      className="shadow-xl rounded-3xl w-96 h-72"
+                    />
+                  </a>
                 </div>
               </div>
             )
