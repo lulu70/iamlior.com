@@ -9,7 +9,7 @@ const MyWork = ({ data, projects }) => {
   return (
     <section id="my-work" className="mt-48">
       <SectionHeader>{title}</SectionHeader>
-      <div className="flex lg:flex-col overflow-x-scroll mt-24 space-y-32">
+      <div className="flex lg:flex-col overflow-x-scroll lg:overflow-x-visible mt-24 lg:space-y-32 items-start">
         {projects.nodes.map(
           ({
             childMdx: {
@@ -29,7 +29,7 @@ const MyWork = ({ data, projects }) => {
             visible && (
               <div
                 key={id}
-                className="flex flex-col-reverse lg:flex-row lg:justify-between justify-end  lg:mr-0 mr-20"
+                className="flex flex-col-reverse lg:flex-row lg:justify-between lg:mr-0 mr-20"
               >
                 <div className="mt-20 lg:mt-0">
                   <div className="lg:w-9/12 mx-auto lg:mx-0">
@@ -43,7 +43,7 @@ const MyWork = ({ data, projects }) => {
                       ))}
                     </div>
                     <a
-                      className="mt-4 block"
+                      className="mt-4 focus inline-block"
                       href={external}
                       target="_blank"
                       rel="noreferrer"
@@ -51,7 +51,7 @@ const MyWork = ({ data, projects }) => {
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        className="text-gray-400 w-8 h-8 -ml-1"
+                        className="text-gray-400 w-8 h-8"
                         viewBox="0 0 24 24"
                         stroke="currentColor"
                       >
@@ -65,9 +65,9 @@ const MyWork = ({ data, projects }) => {
                     </a>
                   </div>
                 </div>
-                <div className="flex lg:justify-end">
+                <div className="flex items-start">
                   <a
-                    className="block"
+                    className="flex focus"
                     href={external}
                     target="_blank"
                     rel="noreferrer"

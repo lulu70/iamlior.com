@@ -25,10 +25,11 @@ const NavigationMenu = ({ className }) => {
     <>
       <div
         id="desktop-menu"
-        className={`relative hidden z-10 lg:block lg:ml-6 ${className} lg:ml-auto`}
+        className={`relative z-10 block ml-auto ${className}`}
       >
         <FocusedButton
           className="relative block h-10 w-10"
+          focusedClassNames="focus"
           onClick={() => {
             setIsOpen(isOpen => !isOpen)
           }}
@@ -70,7 +71,7 @@ const NavigationMenu = ({ className }) => {
                   key={id}
                   to={slug}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-gray-800 hover:bg-black hover:text-white"
+                  className="block px-4 py-2 text-gray-800 hover:bg-black hover:text-white focus"
                 >
                   {text}
                 </Link>

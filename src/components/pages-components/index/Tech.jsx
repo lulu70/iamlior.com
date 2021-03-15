@@ -3,7 +3,7 @@ import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 
 const Col = ({ links }) => (
-  <div className="space-y-4">
+  <div className="space-y-4 pb-4">
     {links.map(({ id, name, icon }) => (
       <div
         key={id}

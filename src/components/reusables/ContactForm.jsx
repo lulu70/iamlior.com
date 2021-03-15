@@ -1,7 +1,7 @@
 import React from "react"
 import FocusedButton from "./FocusedButton"
 import { navigate } from "gatsby"
-const ContactForm = () => {
+const ContactForm = props => {
   const [state, setState] = React.useState({})
   const [valid, setValid] = React.useState(false)
 
@@ -45,7 +45,7 @@ const ContactForm = () => {
   }
   return (
     <form
-      className="mt-20 border p-5 rounded-lg"
+      {...props}
       name="contact"
       method="post"
       action="/thanks/"
@@ -54,13 +54,13 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
     >
       <h4 className="text-xl font-semibold">Send Me A message</h4>
-      <div className="space-y-10 mt-10">
+      <div className="space-y-5 mt-5">
         <label className="block">
           <span>Full name: </span>
           <input type="hidden" name="form-name" value="contact" />
           <input
             type="text"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-yellow-400"
             placeholder="John Doe"
             name="full-name"
             onChange={handleChange}
@@ -71,7 +71,7 @@ const ContactForm = () => {
           <input
             type="email"
             name="email"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-yellow-400"
             placeholder="john@example.com"
             onChange={handleChange}
           />
@@ -81,7 +81,7 @@ const ContactForm = () => {
           <textarea
             placeholder="Your message goes here..."
             name="message"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-black"
+            className="mt-0 block w-full px-0.5 border-0 border-b-2 border-gray-200 focus:ring-0 focus:border-yellow-400"
             rows="2"
             onChange={handleChange}
           ></textarea>
@@ -92,6 +92,7 @@ const ContactForm = () => {
           className={`bg-gray-200 px-2 py-1 border-2 border-black rounded-full w-32 ${
             !valid && "opacity-20 cursor-default"
           }`}
+          focusedClassNames="focus"
         >
           Send
         </FocusedButton>

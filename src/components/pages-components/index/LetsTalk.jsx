@@ -13,28 +13,28 @@ const LetsTalk = ({ data }) => {
     frontmatter: { title, profileImage, email, name },
   } = mdx
   return (
-    <section id="lets-talk" className="mt-40 lg:w-2/3 lg:mx-auto mb-24">
+    <section id="lets-talk" className="mt-40 mb-24">
       <SectionHeader>{title}</SectionHeader>
       <div className="mt-5">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <div className="flex mt-20 space-x-10 items-center">
-        <GatsbyImage
-          image={getImage(profileImage)}
-          alt="profile-image"
-          className="rounded-full w-40"
-        />
-        <div className="text-lg">
-          <div>{name}</div>
-          <a href={`mailto:${email}`}>
-            <UnderlineText>{email}</UnderlineText>
-          </a>
+      <div className="lg:flex lg:flex-row mt-20 lg:items-center">
+        <div className="flex-1">
+          <GatsbyImage
+            image={getImage(profileImage)}
+            alt="profile-image"
+            className="rounded-full w-40"
+          />
+          <div className="text-lg mt-5">
+            <div>{name}</div>
+            <a href={`mailto:${email}`} className="inline-block focus">
+              <UnderlineText>{email}</UnderlineText>
+            </a>
+          </div>
+          <SocialLinks />
         </div>
+        <ContactForm className="border p-5 rounded-lg flex-1 mt-20 lg:mt-0" />
       </div>
-      <div className="mt-10">
-        <SocialLinks />
-      </div>
-      <ContactForm />
     </section>
   )
 }
