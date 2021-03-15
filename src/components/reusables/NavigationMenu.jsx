@@ -65,13 +65,13 @@ const NavigationMenu = ({ className }) => {
               onClick={() => setIsOpen(false)}
               aria-label="layout"
             />
-            <div className="mt-2 py-2 bg-white rounded-lg w-48 shadow-xl absolute right-0">
+            <div className="mt-2 py-4 bg-white rounded-lg w-64 shadow-xl absolute right-0 text-center">
               {links.map(({ id, text, slug }) => (
                 <Link
                   key={id}
                   to={slug}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-gray-800 hover:bg-black hover:text-white focus"
+                  className="block py-4 text-gray-800 hover:bg-black hover:text-white focus text-xl"
                 >
                   {text}
                 </Link>

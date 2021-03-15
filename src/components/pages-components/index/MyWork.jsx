@@ -47,6 +47,7 @@ const MyWork = ({ data, projects }) => {
                       href={external}
                       target="_blank"
                       rel="noreferrer"
+                      aria-label={title}
                     >
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
