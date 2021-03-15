@@ -28,7 +28,7 @@ const SocialLinks = () => {
           href={url}
           target="_blank"
           rel="noreferrer"
-          className="bg-gray-200 border-2 border-black px-3 py-1 rounded-full w-36 text-center flex justify-between focus"
+          className="bg-gray-200 border-2 border-black px-3 py-1 rounded-full w-36 text-center flex justify-between items-center focus"
         >
           <span>{displayName}</span>
           {Icon && <Icon className="w-5" />}

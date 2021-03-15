@@ -32,6 +32,7 @@ const ContactForm = props => {
       }),
     })
       .then(() => {
+        setState({})
         navigate(form.getAttribute("action"))
       })
       .catch(error => {
