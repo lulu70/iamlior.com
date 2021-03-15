@@ -30,6 +30,7 @@ const NavigationMenu = ({ className }) => {
         <FocusedButton
           className="relative block h-10 w-10"
           focusedClassNames="focus"
+          aria-label="menu"
           onClick={() => {
             setIsOpen(isOpen => !isOpen)
           }}

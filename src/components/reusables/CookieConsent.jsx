@@ -26,16 +26,12 @@ const CookieConsent = () => {
 
   return !cookieConcent ? (
     <div
-      className="bg-gray-900 text-gray-100 w-full text-sm z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
+      className="bg-gray-900 text-gray-100 w-full z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
       role="alert"
     >
       We are using cookies to ensure best experience on our website.{" "}
-      <Link
-        to="/policies/privacy-policy"
-        aria-label="go to privacy policy page"
-        className="text-yellow-400 focus"
-      >
-        Learn more
+      <Link to="/policies/privacy-policy" className="text-yellow-400 focus">
+        privacy policy
       </Link>{" "}
       <FocusedButton
         className="border border-gray-100 p-1 rounded-lg"
