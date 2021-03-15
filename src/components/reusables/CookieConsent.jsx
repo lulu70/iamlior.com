@@ -1,8 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
 import MainContext, { setCookieConcent } from "../../context/MainContext"
-import FocusedButton from "./FocusedButton"
 import isBrowser from "../../helpers/isBrowser"
+import useTabIsUsed from "../../hooks/useTabIsUsed"
 
 const CookieConsent = () => {
   const { cookieConcent, mainContextDispatch } = React.useContext(MainContext)
@@ -23,7 +23,7 @@ const CookieConsent = () => {
       localStorage.setItem("cookie_concent", "true")
     }
   }
-
+  const tabIsUsed = useTabIsUsed()
   return !cookieConcent ? (
     <div
       className="bg-gray-900 text-gray-100 w-full z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
@@ -31,15 +31,16 @@ const CookieConsent = () => {
     >
       We are using cookies to ensure best experience on our website.{" "}
       <Link to="/policies/privacy-policy" className="text-yellow-400 focus">
-        privacy policy
+        Privacy policy
       </Link>{" "}
-      <FocusedButton
-        className="border border-gray-100 p-1 rounded-lg"
-        focusedClassNames="focus"
+      <button
+        className={`border border-gray-100 p-1 rounded-lg ${
+          tabIsUsed ? "focus" : "focus:outline-none"
+        }`}
         onClick={handleClick}
       >
         Got it!
-      </FocusedButton>
+      </button>
     </div>
   ) : (
     ""

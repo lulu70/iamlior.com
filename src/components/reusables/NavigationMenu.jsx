@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import FocusedButton from "./FocusedButton"
+import useTabIsUsed from "../../hooks/useTabIsUsed"
 
 export const links = [
   { id: 0, text: "About Me", slug: "/#about" },
@@ -10,6 +10,7 @@ export const links = [
 ]
 const NavigationMenu = ({ className }) => {
   const [isOpen, setIsOpen] = React.useState(false)
+  const tabIsUsed = useTabIsUsed()
   React.useEffect(() => {
     function handleKeydown(e) {
       if (e.key === "Esc" || e.key === "Escape") {
@@ -27,9 +28,10 @@ const NavigationMenu = ({ className }) => {
         id="desktop-menu"
         className={`relative z-10 block ml-auto ${className}`}
       >
-        <FocusedButton
-          className="relative block h-10 w-10"
-          focusedClassNames="focus"
+        <button
+          className={`relative block h-10 w-10 ${
+            tabIsUsed ? "focus" : "focus:outline-none"
+          }`}
           aria-label="menu"
           onClick={() => {
             setIsOpen(isOpen => !isOpen)
@@ -57,7 +59,7 @@ const NavigationMenu = ({ className }) => {
               />
             )}
           </svg>
-        </FocusedButton>
+        </button>
         {isOpen && (
           <>
             <button

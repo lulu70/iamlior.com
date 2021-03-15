@@ -1,6 +1,6 @@
 import React from "react"
 import debounce from "lodash/debounce"
-import FocusedButton from "./FocusedButton"
+import useTabIsUsed from "../../hooks/useTabIsUsed"
 
 const ScrollTopButton = () => {
   const [showScroll, setShowScroll] = React.useState(false)
@@ -21,15 +21,18 @@ const ScrollTopButton = () => {
     }
   }, [showScroll])
 
+  const tabIsUsed = useTabIsUsed()
+
   const scrollTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" })
   }
 
   return showScroll ? (
-    <FocusedButton
+    <button
       type="button"
-      className="bg-gray-600 hover:bg-gray-500 px-2 py-1 rounded-md fixed right-2 bottom-2 z-50"
-      focusedClassNames="focus"
+      className={`bg-gray-600 hover:bg-gray-500 px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 ${
+        tabIsUsed ? "focus" : "focus:outline-none"
+      }`}
       onClick={scrollTop}
     >
       <svg
@@ -45,7 +48,7 @@ const ScrollTopButton = () => {
           fill="white"
         />
       </svg>
-    </FocusedButton>
+    </button>
   ) : (
     ""
   )

@@ -1,6 +1,6 @@
 import React from "react"
-import FocusedButton from "./FocusedButton"
 import { navigate } from "gatsby"
+import useTabIsUsed from "../../hooks/useTabIsUsed"
 const ContactForm = props => {
   const [state, setState] = React.useState({})
   const [valid, setValid] = React.useState(false)
@@ -15,6 +15,8 @@ const ContactForm = props => {
       setValid(false)
     }
   }, [state])
+
+  const tabIsdUsed = useTabIsUsed()
 
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value })
@@ -87,16 +89,15 @@ const ContactForm = props => {
             onChange={handleChange}
           ></textarea>
         </label>
-        <FocusedButton
+        <button
           disabled={!valid}
           type="submit"
           className={`bg-gray-200 px-2 py-1 border-2 border-black rounded-full w-32 ${
             !valid && "opacity-20 cursor-default"
-          }`}
-          focusedClassNames="focus"
+          } ${tabIsdUsed ? "focus" : "focus:outline-none"}`}
         >
           Send
-        </FocusedButton>
+        </button>
       </div>
     </form>
   )
