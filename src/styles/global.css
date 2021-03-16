@@ -8,8 +8,14 @@
 
 * ::selection {
   background-color: #fbbf24;
+  color: black;
 }
 
 * ::-moz-selection {
   background-color: #fbbf24;
+  color: black;
+}
+
+html body {
+  background-color: black;
 }

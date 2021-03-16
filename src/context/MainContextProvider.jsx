@@ -16,7 +16,15 @@ const MainContextProvider = ({ children }) => {
         mainContextDispatch,
       }}
     >
-      {children}
+      <div
+        className={
+          mainContextStore.darkMode
+            ? "dark bg-gray-900 text-gray-100"
+            : "bg-white text-gray-900"
+        }
+      >
+        {children}
+      </div>
     </MainContext.Provider>
   )
 }

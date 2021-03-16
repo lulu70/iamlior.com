@@ -23,7 +23,7 @@ const LetsTalk = ({ data }) => {
           <GatsbyImage
             image={getImage(profileImage)}
             alt="profile-image"
-            className="rounded-full w-40"
+            className="rounded-full w-40 border-2 border-black dark:border-white"
           />
           <div className="text-lg mt-5">
             <div>{name}</div>
