@@ -1,6 +1,6 @@
 module.exports = {
   purge: ["./src/**/*.{js,jsx,ts,tsx}"],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: "class", // or 'media' or 'class'
   theme: {
     extend: {
       fontFamily: {
@@ -16,9 +16,7 @@ module.exports = {
           "monospace",
         ],
       },
-      screens: {
-        hd: "1920px",
-      },
+      screens: {},
       spacing: {
         "16/9": "56.25%",
       },
