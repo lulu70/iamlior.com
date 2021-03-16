@@ -9,7 +9,7 @@ const MyWork = ({ data, projects }) => {
   return (
     <section id="my-work" className="mt-48">
       <SectionHeader>{title}</SectionHeader>
-      <div className="flex lg:flex-col overflow-x-scroll lg:overflow-x-visible mt-24 lg:space-y-32 items-start">
+      <div id="projects-container" className="mt-12 space-y-32">
         {projects.nodes.map(
           ({
             childMdx: {
@@ -28,22 +28,34 @@ const MyWork = ({ data, projects }) => {
           }) =>
             visible && (
               <div
+                id="project-container"
                 key={id}
-                className="flex flex-col-reverse lg:flex-row lg:justify-between lg:mr-0 mr-20"
+                className="flex flex-col-reverse lg:flex-row lg:justify-between bg-gray-200 p-8 rounded-3xl"
               >
-                <div className="mt-20 lg:mt-0">
-                  <div className="lg:w-9/12 mx-auto lg:mx-0">
-                    <span className="mr-2">{emoji}</span>
-                    <span>{category}</span>
-                    <h4 className="text-xl font-semibold mt-1">{title}</h4>
+                <div
+                  id="description-container"
+                  className="mt-10 lg:mt-0 lg:w-7/12"
+                >
+                  <div
+                    id="description-inner-container"
+                    className="lg:w-9/12 mx-auto lg:mx-0 space-y-4"
+                  >
+                    <span id="emoji" className="mr-2">
+                      {emoji}
+                    </span>
+                    <span id="category">{category}</span>
+                    <h4 id="title" className="text-xl font-semibold">
+                      {title}
+                    </h4>
                     <MDXRenderer>{body}</MDXRenderer>
-                    <div className="mt-12 flex flex-wrap">
+                    <div id="tags-container" className="flex flex-wrap">
                       {tags.map(tag => (
                         <UnderlineText key={tag}>{tag}</UnderlineText>
                       ))}
                     </div>
                     <a
-                      className="mt-4 focus inline-block"
+                      id="external-link"
+                      className="focus inline-block"
                       href={external}
                       target="_blank"
                       rel="noreferrer"
@@ -66,9 +78,9 @@ const MyWork = ({ data, projects }) => {
                     </a>
                   </div>
                 </div>
-                <div className="flex items-start">
+                <div id="image-container" className="lg:w-5/12">
                   <a
-                    className="flex focus"
+                    className="focus flex"
                     href={external}
                     target="_blank"
                     rel="noreferrer"
@@ -76,7 +88,7 @@ const MyWork = ({ data, projects }) => {
                     <GatsbyImage
                       image={getImage(screenshot)}
                       alt={title}
-                      className="shadow-xl rounded-3xl w-96 h-72"
+                      className="shadow-xl rounded-lg"
                     />
                   </a>
                 </div>

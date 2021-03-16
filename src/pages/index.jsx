@@ -44,17 +44,9 @@ export const query = graphql`
     }
     tech: file(relativePath: { eq: "index/tech/tech.mdx" }) {
       childMdx {
-        exports {
-          links {
-            id
-            name
-            icon {
-              ...NewGatsbyImage
-            }
-          }
-        }
         frontmatter {
           title
+          links
         }
       }
     }

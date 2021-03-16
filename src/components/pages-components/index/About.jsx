@@ -17,14 +17,14 @@ const About = ({ data }) => {
     frontmatter: { title },
   } = data.childMdx
   return (
-    <section id="about" className="flex mt-48">
+    <section id="about" className="flex flex-col lg:flex-row mt-48">
       <div className="flex-1">
         <SectionHeader>{title}</SectionHeader>
         <MdxWrapper>
           <MDXRenderer>{body}</MDXRenderer>
         </MdxWrapper>
       </div>
-      <PersonSVG className="bg-gradient-to-br from-gray-500 to-black w-2/5 rounded-2xl pt-5" />
+      <PersonSVG className="bg-gradient-to-br from-gray-500 to-black lg:w-2/5 rounded-2xl pt-5 mt-48 lg:mt-0" />
     </section>
   )
 }

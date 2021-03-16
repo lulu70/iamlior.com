@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .focus {
-  @apply focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:shadow-2xl;
+  @apply focus:outline-none focus:ring-4 focus:ring-yellow-400 focus:shadow-2xl rounded-lg;
 }
 
 * ::selection {
