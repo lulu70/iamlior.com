@@ -24,6 +24,8 @@ const LetsTalk = ({ data }) => {
             image={getImage(profileImage)}
             alt="profile-image"
             className="rounded-full w-40 border-2 border-black dark:border-white"
+            //safari fix:
+            imgStyle={{ borderRadius: "9999px" }}
           />
           <div className="text-lg mt-5">
             <div>{name}</div>

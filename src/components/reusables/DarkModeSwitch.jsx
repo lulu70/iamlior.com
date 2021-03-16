@@ -25,6 +25,7 @@ const DarkModeSwitch = ({ tabIsUsed }) => {
     <button
       className={`w-8 h-8 ${tabIsUsed ? "focus" : "focus:outline-none"}`}
       onClick={handleClick}
+      aria-label="dark/light-mode"
     >
       {darkMode ? (
         <svg

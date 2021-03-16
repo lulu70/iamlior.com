@@ -54,7 +54,7 @@ const MyWork = ({ data, projects }) => {
                       ))}
                     </div>
                     <a
-                      id="external-link"
+                      id={"external link to" + title}
                       className="focus inline-block"
                       href={external}
                       target="_blank"
