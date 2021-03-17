@@ -10,7 +10,9 @@ const Layout = ({ children }) => {
       className="relative flex flex-col min-h-screen font-spaceMono max-w-4xl mx-5 lg:mx-auto"
     >
       <Header />
-      <main>{children}</main>
+      <main className="space-y-16 lg:space-y-40 mb-16 lg:mb-40">
+        {children}
+      </main>
       <Footer />
       <CookieConsent />
       <ScrollTopButton />

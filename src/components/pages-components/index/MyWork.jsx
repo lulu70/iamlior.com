@@ -7,9 +7,9 @@ import UnderlineText from "../../reusables/UnderlineText"
 const MyWork = ({ data, projects }) => {
   const title = data.childMdx.frontmatter.title
   return (
-    <section id="my-work" className="mt-48">
+    <section id="my-work" className="space-y-4">
       <SectionHeader>{title}</SectionHeader>
-      <div id="projects-container" className="mt-12 space-y-32">
+      <div id="projects-container" className="space-y-12">
         {projects.nodes.map(
           ({
             childMdx: {

@@ -29,7 +29,7 @@ const SocialLinks = () => {
   ]
 
   return (
-    <div className="inline-flex mt-10 flex-wrap">
+    <div className="inline-flex flex-wrap">
       {links.map(({ id, displayName, url, icon: Icon }) => (
         <a
           key={id}

@@ -11,7 +11,7 @@ const Header = () => {
     <header className="z-50 flex mt-10 items-center">
       <Link
         to="/"
-        className={`flex text-4xl font-semibold ${
+        className={`flex text-3xl lg:text-4xl font-semibold ${
           tabIsUsed ? "focus" : "focus:outline-none"
         }`}
       >

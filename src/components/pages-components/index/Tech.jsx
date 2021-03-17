@@ -50,9 +50,9 @@ const Col = ({ links }) => {
 const Tech = ({ data }) => {
   const { title, links } = data.childMdx.frontmatter
   return (
-    <section id="tech" className="mt-48">
+    <section id="tech">
       <SectionHeader>{title}</SectionHeader>
-      <div className="flex overflow-x-scroll mt-5 space-x-4">
+      <div className="flex overflow-x-scroll mt-4 space-x-4">
         <Col links={links.slice(0, 2)} />
         <Col links={links.slice(2, 4)} />
         <Col links={links.slice(4, 6)} />
