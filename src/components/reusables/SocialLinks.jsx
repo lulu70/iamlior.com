@@ -21,8 +21,8 @@ const SocialLinks = () => {
     },
     {
       id: 2,
-      name: "tweeter",
-      displayName: "Tweeter",
+      name: "twitter",
+      displayName: "Twitter",
       url: "https://twitter.com/liorco70",
       icon: TweeterIcon,
     },
