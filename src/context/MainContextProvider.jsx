@@ -19,8 +19,8 @@ const MainContextProvider = ({ children }) => {
       <div
         className={
           mainContextStore.darkMode
-            ? "dark bg-gray-900 text-gray-100"
-            : "bg-white text-gray-900"
+            ? "dark bg-darkTheme-bg text-darkTheme-text"
+            : "bg-lightTheme-bg text-lightTheme-text"
         }
       >
         {children}

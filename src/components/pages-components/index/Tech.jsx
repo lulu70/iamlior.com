@@ -36,7 +36,7 @@ const Col = ({ links }) => {
         return (
           <div
             key={link}
-            className="bg-gray-200 dark:bg-gray-700 border-2 border-black dark:border-white px-3 py-1 rounded-full flex items-center w-64"
+            className="bg-lightTheme-primary dark:bg-darkTheme-primary border-2 border-lightTheme-text dark:border-darkTheme-text px-3 py-1 rounded-full flex items-center w-64"
           >
             <Icon className="w-5 mr-1" />
             <span>{link}</span>

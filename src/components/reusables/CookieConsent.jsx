@@ -26,18 +26,18 @@ const CookieConsent = () => {
   const tabIsUsed = useTabIsUsed()
   return !cookieConcent ? (
     <div
-      className="bg-gray-900 dark:bg-gray-100 text-gray-100 dark:text-black w-full z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
+      className="bg-darkTheme-bg text-darkTheme-text dark:bg-darkTheme-primary w-full z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
       role="alert"
     >
       We are using cookies to ensure best experience on our website.{" "}
       <Link
         to="/policies/privacy-policy"
-        className="p-1 rounded-lg text-yellow-400 dark:text-yellow-700 focus"
+        className="p-1 rounded-lg text-accent focus"
       >
         Privacy policy
       </Link>{" "}
       <button
-        className={`border-2 border-gray-100 dark:border-black p-1 rounded-lg ${
+        className={`border-2 border-darkTheme-text dark:border-darkTheme-text p-1 rounded-lg ${
           tabIsUsed ? "focus" : "focus:outline-none"
         }`}
         onClick={handleClick}

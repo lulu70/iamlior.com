@@ -30,7 +30,7 @@ const MyWork = ({ data, projects }) => {
               <div
                 id="project-container"
                 key={id}
-                className="flex flex-col-reverse lg:flex-row lg:justify-between bg-gray-200 dark:bg-gray-700 p-8 rounded-3xl"
+                className="flex flex-col-reverse lg:flex-row lg:justify-between bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl"
               >
                 <div
                   id="description-container"

@@ -30,7 +30,7 @@ const ScrollTopButton = () => {
   return showScroll ? (
     <button
       type="button"
-      className={`bg-gray-200 dark:bg-gray-700 border-2 border-black dark:border-white px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 ${
+      className={`bg-lightTheme-primary dark:bg-darkTheme-primary border-2 border-lightTheme-text dark:border-darkTheme-text px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 ${
         tabIsUsed ? "focus" : "focus:outline-none"
       }`}
       onClick={scrollTop}

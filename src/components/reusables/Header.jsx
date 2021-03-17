@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
 import DarkModeSwitch from "./DarkModeSwitch"
 
-const Navigation = () => {
+const Header = () => {
   const tabIsUsed = useTabIsUsed()
 
   return (
@@ -23,4 +23,4 @@ const Navigation = () => {
   )
 }
 
-export default Navigation
+export default Header

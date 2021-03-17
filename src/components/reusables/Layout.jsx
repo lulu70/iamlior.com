@@ -1,5 +1,5 @@
 import React from "react"
-import Navigation from "./Navigation.jsx"
+import Header from "./Header.jsx"
 import ScrollTopButton from "./ScrollTopButton.jsx"
 import Footer from "./Footer.jsx"
 import CookieConsent from "./CookieConsent"
@@ -9,7 +9,7 @@ const Layout = ({ children }) => {
       id="layout-wrapper"
       className="relative flex flex-col min-h-screen font-spaceMono max-w-4xl mx-5 lg:mx-auto"
     >
-      <Navigation />
+      <Header />
       <main>{children}</main>
       <Footer />
       <CookieConsent />

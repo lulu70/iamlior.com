@@ -63,18 +63,18 @@ const NavigationMenu = ({ className }) => {
         {isOpen && (
           <>
             <button
-              className="fixed inset-0 h-full w-full bg-black opacity-50 dark:opacity-90 cursor-default"
+              className="fixed inset-0 h-full w-full bg-black opacity-60 dark:opacity-90 cursor-default"
               tabIndex="-1"
               onClick={() => setIsOpen(false)}
               aria-label="layout"
             />
-            <div className="mt-2 py-4 bg-gray-200 dark:bg-gray-700 rounded-lg w-64 shadow-xl absolute right-0 text-center">
+            <div className="mt-2 py-4 bg-lightTheme-primary dark:bg-darkTheme-primary rounded-lg w-64 shadow-xl absolute right-0 text-center">
               {links.map(({ id, text, slug }) => (
                 <Link
                   key={id}
                   to={slug}
                   onClick={() => setIsOpen(false)}
-                  className="block py-4 hover:bg-gray-700 hover:text-white dark:hover:bg-gray-200 dark:hover:text-black focus text-xl"
+                  className="block py-4 hover:bg-lightTheme-text hover:text-lightTheme-bg dark:hover:bg-darkTheme-text dark:hover:text-darkTheme-bg focus text-xl"
                 >
                   {text}
                 </Link>

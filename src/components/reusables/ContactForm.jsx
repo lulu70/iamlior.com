@@ -63,7 +63,7 @@ const ContactForm = props => {
           <input type="hidden" name="form-name" value="contact" />
           <input
             type="text"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 dark:bg-gray-900 border-gray-200 focus:ring-0 focus:border-yellow-400"
+            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             placeholder="John Doe"
             name="full-name"
             onChange={handleChange}
@@ -74,7 +74,7 @@ const ContactForm = props => {
           <input
             type="email"
             name="email"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 dark:bg-gray-900 border-gray-200 focus:ring-0 focus:border-yellow-400"
+            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             placeholder="john@example.com"
             onChange={handleChange}
           />
@@ -84,7 +84,7 @@ const ContactForm = props => {
           <textarea
             placeholder="Your message goes here..."
             name="message"
-            className="mt-0 block w-full px-0.5 border-0 border-b-2 dark:bg-gray-900 border-gray-200 focus:ring-0 focus:border-yellow-400"
+            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             rows="2"
             onChange={handleChange}
           ></textarea>
@@ -92,7 +92,7 @@ const ContactForm = props => {
         <button
           disabled={!valid}
           type="submit"
-          className={`bg-gray-200 dark:bg-gray-700 px-2 py-1 border-2 border-black dark:border-white rounded-full w-32 ${
+          className={`bg-lightTheme-primary dark:bg-darkTheme-primary px-2 py-1 border-2 border-lightTheme-text dark:border-darkTheme-text rounded-full w-32 ${
             !valid && "opacity-40 cursor-default"
           } ${tabIsdUsed ? "focus" : "focus:outline-none"}`}
         >
