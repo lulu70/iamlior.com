@@ -69,10 +69,11 @@ module.exports = {
         name: `I Am Lior`,
         short_name: `iamlior`,
         start_url: `/`,
-        background_color: `#FFFFFF`,
-        theme_color: `#FFFFFF`,
+        // background_color: `#FFFFFF`,
+        // theme_color: `#FFFFFF`,
         display: `minimal-ui`,
-        icon: `/static/favicon.ico`, // This path is relative to the root of the site.
+        icon: `static/icon.png`, // This path is relative to the root of the site.
+        theme_color_in_head: false,
       },
     },
   ],
