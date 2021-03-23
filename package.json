@@ -24,7 +24,6 @@
     "gatsby": "^3.0.0",
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
     "gatsby-plugin-canonical-urls": "^3.0.0",
-    "gatsby-plugin-create-client-paths": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-mdx": "^2.0.0",
@@ -52,9 +51,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/lulu70/licodev-2021"
   }
 }
