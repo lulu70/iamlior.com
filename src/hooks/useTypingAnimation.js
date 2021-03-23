@@ -16,10 +16,12 @@ const useTypingAnimation = () => {
       }),
     []
   )
+
   const {
     personLeftHandRef,
     laptopLogoRef,
     laptopScreenLightRef,
+    audioRef,
   } = useRefsContext()
 
   React.useEffect(() => {
@@ -46,8 +48,8 @@ const useTypingAnimation = () => {
         "<"
       )
     //autoplay the animation
-    typingTl.play()
-    screenTl.play()
+    // typingTl.play()
+    // screenTl.play()
   }, [
     personLeftHandRef,
     laptopLogoRef,
@@ -59,10 +61,12 @@ const useTypingAnimation = () => {
   const startTypingAnimation = () => {
     typingTl.play()
     screenTl.play()
+    audioRef.current.play()
   }
   const stopTypingAnimation = () => {
     typingTl.pause()
     screenTl.reverse()
+    audioRef.current.pause()
   }
   return { startTypingAnimation, stopTypingAnimation }
 }

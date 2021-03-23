@@ -15,8 +15,8 @@ export default function Home({ data }) {
       <Layout>
         <Hero data={data.hero} />
         <About data={data.about} />
-        <Tech data={data.tech} />
         <MyWork data={data.myWork} projects={data.projects} />
+        <Tech data={data.tech} />
         <LetsTalk data={data.letsTalk} />
       </Layout>
     </>
@@ -36,8 +36,8 @@ export const query = graphql`
     }
     about: file(relativePath: { eq: "index/about/about.mdx" }) {
       childMdx {
-        body
         frontmatter {
+          body
           title
         }
       }

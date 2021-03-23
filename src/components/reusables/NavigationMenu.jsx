@@ -4,8 +4,8 @@ import useTabIsUsed from "../../hooks/useTabIsUsed"
 
 export const links = [
   { id: 0, text: "About Me", slug: "/#about" },
-  { id: 1, text: "Tech I Use", slug: "/#tech" },
-  { id: 2, text: "My Work", slug: "/#my-work" },
+  { id: 1, text: "My Work", slug: "/#my-work" },
+  { id: 2, text: "Tech I Use", slug: "/#tech" },
   { id: 3, text: "Lets Talk", slug: "/#lets-talk" },
 ]
 const NavigationMenu = ({ className }) => {
