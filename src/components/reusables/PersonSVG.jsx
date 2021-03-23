@@ -7,7 +7,6 @@ const PersonSVG = props => {
     personLeftHandRef,
     laptopLogoRef,
     laptopScreenLightRef,
-    audioRef,
   } = useRefsContext()
   return (
     <>
@@ -223,11 +222,6 @@ const PersonSVG = props => {
           </linearGradient>
         </defs>
       </svg>
-      <audio ref={audioRef} loop>
-        <source src="typing.mp3" type="audio/mpeg" />
-        <track kind="captions" srcLang="en" label="english_captions" />
-        Your browser does not support the audio element.
-      </audio>
     </>
   )
 }

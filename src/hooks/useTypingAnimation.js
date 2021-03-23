@@ -21,7 +21,6 @@ const useTypingAnimation = () => {
     personLeftHandRef,
     laptopLogoRef,
     laptopScreenLightRef,
-    audioRef,
   } = useRefsContext()
 
   React.useEffect(() => {
@@ -61,12 +60,10 @@ const useTypingAnimation = () => {
   const startTypingAnimation = () => {
     typingTl.play()
     screenTl.play()
-    audioRef.current.play()
   }
   const stopTypingAnimation = () => {
     typingTl.pause()
     screenTl.reverse()
-    audioRef.current.pause()
   }
   return { startTypingAnimation, stopTypingAnimation }
 }

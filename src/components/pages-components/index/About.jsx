@@ -86,7 +86,15 @@ const About = ({ data }) => {
           {body[1]}
         </p>
       </div>
-      <PersonSVG className="bg-gradient-to-br from-gray-500 to-black lg:w-2/5 rounded-2xl pt-5 mt-16 lg:mt-0 opacity-0 invisible" />
+      <PersonSVG
+        onPointerEnter={() => {
+          startTypingAnimation()
+        }}
+        onPointerLeave={() => {
+          stopTypingAnimation()
+        }}
+        className="bg-gradient-to-br from-gray-500 to-black lg:w-2/5 rounded-2xl pt-5 mt-16 lg:mt-0 opacity-0 invisible"
+      />
     </section>
   )
 }

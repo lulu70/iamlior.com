@@ -8,7 +8,6 @@ const RefsContextProvider = ({ children }) => {
   const laptopLogoRef = React.useRef()
   const laptopScreenLightRef = React.useRef()
   const indexContainerRef = React.useRef()
-  const audioRef = React.useRef()
 
   return (
     <RefsContext.Provider
@@ -18,7 +17,6 @@ const RefsContextProvider = ({ children }) => {
         personLeftHandRef,
         laptopLogoRef,
         laptopScreenLightRef,
-        audioRef,
       }}
     >
       {children}
