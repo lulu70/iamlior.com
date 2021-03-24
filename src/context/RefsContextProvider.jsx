@@ -8,10 +8,16 @@ const RefsContextProvider = ({ children }) => {
   const laptopLogoRef = React.useRef()
   const laptopScreenLightRef = React.useRef()
   const indexContainerRef = React.useRef()
+  const aboutTitleRef = React.useRef()
+  const aboutBodyFirstRef = React.createRef()
+  const aboutBodySecondRef = React.createRef()
 
   return (
     <RefsContext.Provider
       value={{
+        aboutBodyFirstRef,
+        aboutBodySecondRef,
+        aboutTitleRef,
         personRef,
         indexContainerRef,
         personLeftHandRef,
