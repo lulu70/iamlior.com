@@ -1,6 +1,13 @@
 import React from "react"
 import { navigate } from "gatsby"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
+import { css } from "styled-components"
+import tw from "twin.macro"
+
+const inputStyles = css`
+  ${tw`mt-1 block w-full p-2 bg-lightTheme-bg dark:bg-darkTheme-bg border-0 border-b-4 dark:border-b-2 border-lightTheme-bg dark:border-darkTheme-bg focus:border-accent focus:ring-0`}
+`
+
 const ContactForm = props => {
   const [state, setState] = React.useState({})
   const [valid, setValid] = React.useState(false)
@@ -56,43 +63,46 @@ const ContactForm = props => {
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      <h4 className="text-xl font-semibold">Send Me A message</h4>
+      <h4 className="text-2xl font-semibold">Send Me A message</h4>
       <div className="space-y-5 mt-5">
-        <label className="block">
+        <label className="block" htmlFor="full-name">
           <span>Full name: </span>
           <input type="hidden" name="form-name" value="contact" />
           <input
             type="text"
-            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             placeholder="John Doe"
+            id="full-name"
             name="full-name"
+            css={inputStyles}
             onChange={handleChange}
           />
         </label>
-        <label className="block">
+        <label className="block" htmlFor="email">
           <span>Email address</span>
           <input
+            id="email"
             type="email"
             name="email"
-            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             placeholder="john@example.com"
+            css={inputStyles}
             onChange={handleChange}
           />
         </label>
-        <label className="block">
+        <label className="block" htmlFor="message">
           <span>Your Message</span>
           <textarea
+            id="message"
             placeholder="Your message goes here..."
             name="message"
-            className="mt-1 block w-full px-0.5 border-0 border-b-2 bg-lightTheme-primary dark:bg-darkTheme-primary border-lightTheme-text dark:border-darkTheme-text focus:ring-0 focus:border-accent dark:focus:border-accent"
             rows="2"
+            css={inputStyles}
             onChange={handleChange}
           ></textarea>
         </label>
         <button
           disabled={!valid}
           type="submit"
-          className={`bg-lightTheme-primary dark:bg-darkTheme-primary px-2 py-1 border-2 border-lightTheme-text dark:border-darkTheme-text rounded-full w-32 ${
+          className={`bg-lightTheme-bg dark:bg-darkTheme-bg px-2 py-1 rounded-full w-32 ${
             !valid && "opacity-40 cursor-default"
           } ${tabIsdUsed ? "focus" : "focus:outline-none"}`}
         >

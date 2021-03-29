@@ -9,14 +9,14 @@ module.exports = {
         lightTheme: {
           text: colors.coolGray[900],
           bg: colors.coolGray[100],
-          primary: colors.coolGray[200],
+          primary: colors.coolGray[300],
           secondary: colors.coolGray[700],
         },
         darkTheme: {
           text: colors.coolGray[100],
           bg: colors.coolGray[900],
           primary: colors.coolGray[700],
-          secondary: colors.coolGray[200],
+          secondary: colors.coolGray[300],
         },
         accent: colors.amber[400],
       },
