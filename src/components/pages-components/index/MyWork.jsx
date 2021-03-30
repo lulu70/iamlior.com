@@ -12,28 +12,33 @@ const MyWork = ({ data, projects }) => {
   return (
     <section id="my-work" className="space-y-4">
       <SectionHeader>{title}</SectionHeader>
-      <div id="projects-container" className="space-y-12">
+      <div id="projects-container">
         {projects.nodes.map(
-          ({
-            childMdx: {
-              body,
-              frontmatter: {
-                title,
-                emoji,
-                category,
-                screenshot,
-                visible,
-                external,
-                tags,
+          (
+            {
+              childMdx: {
+                body,
+                frontmatter: {
+                  title,
+                  emoji,
+                  category,
+                  screenshot,
+                  visible,
+                  external,
+                  tags,
+                },
               },
+              id,
             },
-            id,
-          }) =>
+            index
+          ) =>
             visible && (
               <div
                 id="project-container"
                 key={id}
-                className="bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4"
+                className={`bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4 max-w-2xl mt-12 ${
+                  index % 2 !== 0 ? "ml-auto" : "mr-auto"
+                }`}
               >
                 <div id="description-container" className="max-w-xl space-y-4">
                   <span id="emoji" className="mr-2">
@@ -57,7 +62,7 @@ const MyWork = ({ data, projects }) => {
                     <GatsbyImage
                       image={getImage(screenshot)}
                       alt={title}
-                      className="shadow-xl rounded-lg"
+                      className="rounded-lg"
                     />
                   </a>
                 </div>

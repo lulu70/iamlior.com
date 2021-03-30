@@ -28,7 +28,6 @@ export const query = graphql`
     hero: file(relativePath: { eq: "index/hero/hero.mdx" }) {
       childMdx {
         frontmatter {
-          greetings
           title
           subtitle
         }

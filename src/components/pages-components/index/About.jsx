@@ -19,29 +19,20 @@ const About = ({ data }) => {
   })
 
   return (
-    <section id="about" className="flex flex-col lg:flex-row">
-      <div className="flex-1">
-        <SectionHeader>
-          <div
-            ref={aboutTitleRef}
-            className="dark:text-lightTheme-text text-darkTheme-text"
-          >
-            {title}
-          </div>
-        </SectionHeader>
-        <p
-          ref={aboutBodyFirstRef}
-          className="mt-4 dark:text-lightTheme-text text-darkTheme-text"
-        >
-          {body[0]}
-        </p>
-        <p
-          ref={aboutBodySecondRef}
+    <section id="about" className="">
+      <SectionHeader>
+        <div
+          ref={aboutTitleRef}
           className="dark:text-lightTheme-text text-darkTheme-text"
         >
-          {body[1]}
-        </p>
-      </div>
+          {title}
+        </div>
+      </SectionHeader>
+      <p className="mt-4 dark:text-lightTheme-text text-darkTheme-text text-xl max-w-lg">
+        <span ref={aboutBodyFirstRef}>{body[0]}</span>
+        <br />
+        <span ref={aboutBodySecondRef}>{body[1]}</span>
+      </p>
       <PersonSVG
         onPointerEnter={() => {
           resumeTypingAnimation()
@@ -49,7 +40,7 @@ const About = ({ data }) => {
         onPointerLeave={() => {
           stopTypingAnimation()
         }}
-        className="bg-gradient-to-br from-gray-500 to-black lg:w-2/5 rounded-2xl pt-5 mt-16 lg:mt-0 opacity-0 invisible"
+        className="rounded-2xl md:-mt-24 opacity-0 invisible max-w-lg ml-auto"
       />
     </section>
   )
