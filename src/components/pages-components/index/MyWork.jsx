@@ -3,9 +3,12 @@ import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import UnderlineText from "../../reusables/UnderlineText"
+import useTabIsUsed from "../../../hooks/useTabIsUsed"
 
 const MyWork = ({ data, projects }) => {
+  const tabIsUsed = useTabIsUsed()
   const title = data.childMdx.frontmatter.title
+
   return (
     <section id="my-work" className="space-y-4">
       <SectionHeader>{title}</SectionHeader>
@@ -30,57 +33,23 @@ const MyWork = ({ data, projects }) => {
               <div
                 id="project-container"
                 key={id}
-                className="flex flex-col-reverse lg:flex-row lg:justify-between bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl"
+                className="bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4"
               >
-                <div
-                  id="description-container"
-                  className="mt-10 lg:mt-0 lg:w-7/12"
-                >
-                  <div
-                    id="description-inner-container"
-                    className="lg:w-9/12 mx-auto lg:mx-0 space-y-4"
-                  >
-                    <span id="emoji" className="mr-2">
-                      {emoji}
-                    </span>
-                    <span id="category">{category}</span>
-                    <h4 id="title" className="text-xl font-semibold">
-                      {title}
-                    </h4>
-                    <MDXRenderer>{body}</MDXRenderer>
-                    <div id="tags-container" className="flex flex-wrap">
-                      {tags.map(tag => (
-                        <UnderlineText key={tag}>{tag}</UnderlineText>
-                      ))}
-                    </div>
-                    <a
-                      id={"external link to" + title}
-                      className="focus inline-block"
-                      href={external}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={title}
-                    >
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        className="text-gray-400 w-8 h-8"
-                        viewBox="0 0 24 24"
-                        stroke="currentColor"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                        />
-                      </svg>
-                    </a>
-                  </div>
+                <div id="description-container" className="max-w-xl space-y-4">
+                  <span id="emoji" className="mr-2">
+                    {emoji}
+                  </span>
+                  <span id="category">{category}</span>
+                  <h4 id="title" className="text-xl font-semibold">
+                    {title}
+                  </h4>
+                  <MDXRenderer>{body}</MDXRenderer>
                 </div>
-                <div id="image-container" className="lg:w-5/12">
+                <div id="image-container">
                   <a
-                    className="focus flex"
+                    className={`flex ${
+                      tabIsUsed ? "focus" : "focus:outline-none"
+                    }`}
                     href={external}
                     target="_blank"
                     rel="noreferrer"
@@ -92,6 +61,34 @@ const MyWork = ({ data, projects }) => {
                     />
                   </a>
                 </div>
+                <div id="tags-container" className="flex flex-wrap max-w-xl">
+                  {tags.map(tag => (
+                    <UnderlineText key={tag}>{tag}</UnderlineText>
+                  ))}
+                </div>
+                <a
+                  id={"external link to" + title}
+                  className="focus inline-block"
+                  href={external}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={title}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    className="text-gray-400 w-8 h-8"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+                    />
+                  </svg>
+                </a>
               </div>
             )
         )}
