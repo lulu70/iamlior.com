@@ -50,22 +50,21 @@ const MyWork = ({ data, projects }) => {
                   </h4>
                   <MDXRenderer>{body}</MDXRenderer>
                 </div>
-                <div id="image-container">
-                  <a
-                    className={`flex ${
-                      tabIsUsed ? "focus" : "focus:outline-none"
-                    }`}
-                    href={external}
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <GatsbyImage
-                      image={getImage(screenshot)}
-                      alt={title}
-                      className="rounded-lg"
-                    />
-                  </a>
-                </div>
+                <a
+                  id="link-to-project-page"
+                  className={`flex ${
+                    tabIsUsed ? "focus" : "focus:outline-none"
+                  }`}
+                  href={external}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <GatsbyImage
+                    image={getImage(screenshot)}
+                    alt={title}
+                    className="rounded-lg"
+                  />
+                </a>
                 <div id="tags-container" className="flex flex-wrap max-w-xl">
                   {tags.map(tag => (
                     <UnderlineText key={tag}>{tag}</UnderlineText>
