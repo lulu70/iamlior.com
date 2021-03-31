@@ -51,7 +51,7 @@ const MyWork = ({ data, projects }) => {
                   <MDXRenderer>{body}</MDXRenderer>
                 </div>
                 <a
-                  id="link-to-project-page"
+                  id={"link to" + title}
                   className={`flex ${
                     tabIsUsed ? "focus" : "focus:outline-none"
                   }`}
