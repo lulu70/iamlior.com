@@ -23,7 +23,7 @@ const LetsTalk = ({ data }) => {
           <GatsbyImage
             image={getImage(profileImage)}
             alt="profile-image"
-            className="rounded-full w-40"
+            className="rounded-full w-36 border"
             //safari fix:
             imgStyle={{ borderRadius: "9999px" }}
           />
@@ -35,7 +35,7 @@ const LetsTalk = ({ data }) => {
           </div>
           <SocialLinks />
         </div>
-        <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 mt-16 lg:mt-0" />
+        <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 mt-16 lg:mt-0 max-w-xl" />
       </div>
     </section>
   )

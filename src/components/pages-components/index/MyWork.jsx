@@ -40,12 +40,12 @@ const MyWork = ({ data, projects }) => {
                   index % 2 !== 0 ? "ml-auto" : "mr-auto"
                 }`}
               >
-                <div id="description-container" className="max-w-xl space-y-4">
+                <div id="description-container" className="max-w-xl">
                   <span id="emoji" className="mr-2">
                     {emoji}
                   </span>
                   <span id="category">{category}</span>
-                  <h4 id="title" className="text-xl font-semibold">
+                  <h4 id="title" className="text-xl font-semibold mt-4">
                     {title}
                   </h4>
                   <MDXRenderer>{body}</MDXRenderer>
