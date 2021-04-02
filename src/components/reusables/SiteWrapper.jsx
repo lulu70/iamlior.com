@@ -3,7 +3,6 @@ import "../../../src/styles/global.css"
 import ErrorBoundary from "./ErrorBoundary"
 import MainContextProvider from "../../context/MainContextProvider"
 import RefsContextProvider from "../../context/RefsContextProvider"
-import "@fontsource/space-mono"
 
 const SiteWrapper = ({ children }) => {
   return (

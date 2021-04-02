@@ -20,19 +20,6 @@ module.exports = {
         },
         accent: colors.amber[400],
       },
-      fontFamily: {
-        spaceMono: [
-          '"Space Mono"',
-          "ui-monospace",
-          "SFMono-Regular",
-          "Menlo",
-          "Monaco",
-          "Consolas",
-          '"Liberation Mono"',
-          '"Courier New"',
-          "monospace",
-        ],
-      },
       screens: {},
       spacing: {
         "16/9": "56.25%",

@@ -16,7 +16,6 @@
     "deploy": "yarn build && ntl deploy --prod --message \"DEPLOYED_LOCALLY\" && ntl open"
   },
   "dependencies": {
-    "@fontsource/space-mono": "^4.2.2",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@tailwindcss/forms": "^0.2.1",
