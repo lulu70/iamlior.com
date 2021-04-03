@@ -17,7 +17,7 @@ const Header = () => {
           tabIsUsed ? "focus" : "focus:outline-none"
         }`}
       >
-        <SiteIcon className="w-20 fill-current" />
+        <SiteIcon className="w-20 h-full fill-current" />
       </Link>
       <NavigationMenu />
       <DarkModeSwitch tabIsUsed={tabIsUsed} />
