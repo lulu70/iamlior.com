@@ -9,7 +9,7 @@ const Header = () => {
   const tabIsUsed = useTabIsUsed()
 
   return (
-    <header className="z-50 flex lg:py-2 items-center sticky top-0 bg-lightTheme-bg dark:bg-darkTheme-bg">
+    <header className="z-50 flex py-2 items-center sticky top-0 bg-lightTheme-bg dark:bg-darkTheme-bg">
       <Link
         to="/"
         aria-label="brand"
