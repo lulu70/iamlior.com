@@ -12,6 +12,7 @@ const Header = () => {
     <header className="z-50 flex lg:py-2 items-center sticky top-0 bg-lightTheme-bg dark:bg-darkTheme-bg">
       <Link
         to="/"
+        aria-label="brand"
         className={`flex text-3xl lg:text-4xl ${
           tabIsUsed ? "focus" : "focus:outline-none"
         }`}
