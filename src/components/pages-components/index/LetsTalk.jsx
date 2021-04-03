@@ -18,14 +18,12 @@ const LetsTalk = ({ data }) => {
       <div className="mt-4">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <div className="lg:flex lg:flex-row mt-12 lg:items-center">
-        <div className="flex-1 space-y-4">
+      <div className="lg:flex lg:flex-row mt-4 lg:items-center">
+        <div className="flex-1">
           <GatsbyImage
             image={getImage(profileImage)}
             alt="profile-image"
-            className="rounded-full w-36 border"
-            //safari fix:
-            imgStyle={{ borderRadius: "9999px" }}
+            className="w-40"
           />
           <div className="text-lg">
             <div>{name}</div>
@@ -33,7 +31,9 @@ const LetsTalk = ({ data }) => {
               <UnderlineText>{email}</UnderlineText>
             </a>
           </div>
-          <SocialLinks />
+          <div className="mt-4">
+            <SocialLinks />
+          </div>
         </div>
         <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 mt-16 lg:mt-0 max-w-xl" />
       </div>

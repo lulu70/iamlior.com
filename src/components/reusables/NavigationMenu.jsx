@@ -29,7 +29,7 @@ const NavigationMenu = ({ className }) => {
         className={`relative z-10 block ml-auto ${className}`}
       >
         <button
-          className={`relative block h-10 w-10 ${
+          className={`relative block h-10 w-10 z-10 ${
             tabIsUsed ? "focus" : "focus:outline-none"
           }`}
           aria-label="menu"
@@ -47,14 +47,14 @@ const NavigationMenu = ({ className }) => {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1}
                 d="M6 18L18 6M6 6l12 12"
               />
             ) : (
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2}
+                strokeWidth={1}
                 d="M4 6h16M4 12h16M4 18h16"
               />
             )}

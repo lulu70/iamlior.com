@@ -1,20 +1,45 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../../components/reusables/Layout"
 import SEO from "../../components/reusables/seo"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import styled from "styled-components"
+import tw from "twin.macro"
 
-const PrivacyPolicy = () => {
+const StyledSection = styled.section`
+  p {
+    ${tw`mt-6 max-w-xl mx-auto`}
+  }
+`
+
+const PrivacyPolicy = ({ data }) => {
+  const {
+    frontmatter: { title },
+    body,
+  } = data.mdx
+
   return (
     <>
-      <SEO title="PrivacyPolicy" />
+      <SEO title={title} />
       <Layout>
-        <section id="main" className="lg:mx-28 flex mb-28 justify-center">
-          <h1 className="text-4xl font-bold text-center mt-10">
-            Privacy Policy
-          </h1>
-        </section>
+        <StyledSection id="main">
+          <h1 className="text-4xl font-bold text-center mt-10">{title}</h1>
+          <MDXRenderer>{body}</MDXRenderer>
+        </StyledSection>
       </Layout>
     </>
   )
 }
+
+export const query = graphql`
+  {
+    mdx(frontmatter: { title: { eq: "Privacy Policy" } }) {
+      frontmatter {
+        title
+      }
+      body
+    }
+  }
+`
 
 export default PrivacyPolicy
