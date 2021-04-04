@@ -88,8 +88,6 @@ export const query = graphql`
           profileImage {
             ...NewGatsbyImage
           }
-          email
-          name
         }
       }
     }

@@ -2,7 +2,6 @@ import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import UnderlineText from "../../reusables/UnderlineText"
 import SocialLinks from "../../reusables/SocialLinks"
 import ContactForm from "../../reusables/ContactForm"
 
@@ -10,33 +9,21 @@ const LetsTalk = ({ data }) => {
   const mdx = data.childMdx
   const {
     body,
-    frontmatter: { title, profileImage, email, name },
+    frontmatter: { title, profileImage },
   } = mdx
   return (
     <section id="lets-talk">
-      <SectionHeader>{title}</SectionHeader>
-      <div className="mt-4">
+      <SectionHeader className="text-center">{title}</SectionHeader>
+      <div className="mt-4 text-center text-xl">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <div className="lg:flex lg:flex-row mt-4 lg:items-center">
-        <div className="flex-1">
-          <GatsbyImage
-            image={getImage(profileImage)}
-            alt="profile-image"
-            className="w-40"
-          />
-          <div className="text-lg">
-            <div>{name}</div>
-            <a href={`mailto:${email}`} className="inline-block focus">
-              <UnderlineText>{email}</UnderlineText>
-            </a>
-          </div>
-          <div className="mt-4">
-            <SocialLinks />
-          </div>
-        </div>
-        <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 mt-16 lg:mt-0 max-w-xl" />
-      </div>
+      <GatsbyImage
+        image={getImage(profileImage)}
+        alt="profile-image"
+        className="w-36 mx-auto block"
+      />
+      <SocialLinks className="mt-4" />
+      <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl mx-auto" />
     </section>
   )
 }
