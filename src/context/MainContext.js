@@ -4,7 +4,7 @@ const MainContext = React.createContext()
 
 export const initialStoreState = {
   cookieConcent: false,
-  darkMode: false,
+  darkMode: true,
 }
 
 const types = {
