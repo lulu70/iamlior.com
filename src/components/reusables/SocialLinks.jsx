@@ -4,6 +4,22 @@ import GithubIcon from "./GithubIcon"
 import MailIcon from "./MailIcon"
 import TweeterIcon from "./TweeterIcon"
 
+const Col = ({ links }) => (
+  <div className="w-32">
+    {links.map(({ id, displayName, url, icon: Icon }) => (
+      <a
+        key={id}
+        href={url}
+        target="_blank"
+        rel="noreferrer"
+        className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 rounded-full flex justify-between items-center focus mb-4"
+      >
+        <span>{displayName}</span>
+        {Icon && <Icon className="w-5 fill-current" />}
+      </a>
+    ))}
+  </div>
+)
 const SocialLinks = ({ className }) => {
   const links = [
     {
@@ -15,17 +31,17 @@ const SocialLinks = ({ className }) => {
     },
     {
       id: 1,
-      name: "github",
-      displayName: "Github",
-      url: "https://github.com/lulu70",
-      icon: GithubIcon,
-    },
-    {
-      id: 2,
       name: "facebook",
       displayName: "Facebook",
       url: "https://www.facebook.com/lior2",
       icon: FacebookIcon,
+    },
+    {
+      id: 2,
+      name: "github",
+      displayName: "Github",
+      url: "https://github.com/lulu70",
+      icon: GithubIcon,
     },
     {
       id: 3,
@@ -35,23 +51,11 @@ const SocialLinks = ({ className }) => {
       icon: TweeterIcon,
     },
   ]
-
+  const slicer = Math.round(links.length / 2)
   return (
-    <div
-      className={`flex flex-wrap max-w-xl justify-center mx-auto ${className}`}
-    >
-      {links.map(({ id, displayName, url, icon: Icon }) => (
-        <a
-          key={id}
-          href={url}
-          target="_blank"
-          rel="noreferrer"
-          className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 rounded-full w-1/3 flex justify-between items-center focus mr-2 mb-4"
-        >
-          <span>{displayName}</span>
-          {Icon && <Icon className="w-5 fill-current" />}
-        </a>
-      ))}
+    <div className={`flex justify-center space-x-4 ${className}`}>
+      <Col links={links.slice(0, slicer)} />
+      <Col links={links.slice(slicer)} />
     </div>
   )
 }
