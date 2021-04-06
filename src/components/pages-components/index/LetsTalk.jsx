@@ -20,7 +20,7 @@ const LetsTalk = ({ data }) => {
       <GatsbyImage
         image={getImage(profileImage)}
         alt="profile-image"
-        className="w-36"
+        className="w-32"
       />
       <SocialLinks className="mt-4" />
       <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl mx-auto w-full" />
