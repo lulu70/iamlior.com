@@ -53,7 +53,7 @@ const SocialLinks = ({ className }) => {
   ]
   const slicer = Math.round(links.length / 2)
   return (
-    <div className={`flex justify-center space-x-4 ${className}`}>
+    <div className={`flex space-x-4 ${className}`}>
       <Col links={links.slice(0, slicer)} />
       <Col links={links.slice(slicer)} />
     </div>

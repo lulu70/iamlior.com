@@ -8,11 +8,9 @@ const About = ({ data }) => {
   } = data.childMdx
 
   return (
-    <section id="about" className="text-center">
-      <SectionHeader>
-        <div>{title}</div>
-      </SectionHeader>
-      <p className="mt-4 max-w-lg mx-auto text-xl lg:text-2xl">
+    <section id="about" className="max-w-lg">
+      <SectionHeader className="">{title}</SectionHeader>
+      <p className="mt-4  mx-auto text-xl lg:text-2xl">
         <span>{body[0]}</span>
         <br />
         <span>{body[1]}</span>

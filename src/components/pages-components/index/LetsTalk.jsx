@@ -12,9 +12,9 @@ const LetsTalk = ({ data }) => {
     frontmatter: { title, profileImage },
   } = mdx
   return (
-    <section id="lets-talk" className="flex flex-col items-center">
-      <SectionHeader className="text-center">{title}</SectionHeader>
-      <div className="mt-4 text-center">
+    <section id="lets-talk" className="flex flex-col">
+      <SectionHeader>{title}</SectionHeader>
+      <div className="mt-4">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <GatsbyImage
@@ -23,7 +23,7 @@ const LetsTalk = ({ data }) => {
         className="w-36 mt-4"
       />
       <SocialLinks className="mt-8" />
-      <ContactForm className="mt-4 bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl mx-auto w-full" />
+      <ContactForm className="mt-4 bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl w-full" />
     </section>
   )
 }
