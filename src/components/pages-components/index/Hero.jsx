@@ -1,13 +1,32 @@
 import React from "react"
-import SocialLinks from "../../reusables/SocialLinks"
-
+import PersonSVG from "../../reusables/PersonSVG"
+import { RefsContext } from "../../../context/RefsContextProvider"
+import useTypingAnimation from "../../../hooks/useTypingAnimation"
 const Hero = ({ data }) => {
   const { title, subtitle } = data.childMdx.frontmatter
+  const { heroTitleRef, heroSubtitleRef } = React.useContext(RefsContext)
+  const { resumeTypingAnimation } = useTypingAnimation({
+    title,
+    subtitle,
+  })
   return (
-    <section id="hero" className="mt-16 lg:mt-24 space-y-8 text-center">
-      <h1 className="text-5xl">{title}</h1>
-      <h2 className="text-3xl">{subtitle}</h2>
-      <SocialLinks />
+    <section id="hero" className="mt-8 lg:mt-24 text-center lg:text-left">
+      <div className="dark:text-darkTheme-bg text-lightTheme-bg">
+        <h1 ref={heroTitleRef} className="text-6xl lg:text-8xl">
+          {title}
+        </h1>
+        <h2 ref={heroSubtitleRef} className="text-2xl lg:text-4xl mt-4">
+          {subtitle}
+        </h2>
+      </div>
+      <div>
+        <PersonSVG
+          onPointerEnter={() => {
+            resumeTypingAnimation()
+          }}
+          className="rounded-2xl opacity-0 invisible max-w-md lg:max-w-xl mx-auto lg:mr-0 lg:ml-auto mt-12 lg:mt-0"
+        />
+      </div>
     </section>
   )
 }

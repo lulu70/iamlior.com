@@ -5,7 +5,7 @@ import useRefsContext from "../hooks/useRefsContext"
 
 gsap.registerPlugin(TextPlugin)
 
-const useTypingAnimation = ({ body, title }) => {
+const useTypingAnimation = ({ title, subtitle }) => {
   //create timelines
   const fadeInTl = React.useMemo(
     () =>
@@ -44,9 +44,8 @@ const useTypingAnimation = ({ body, title }) => {
   )
   //get the refs
   const {
-    aboutTitleRef,
-    aboutBodyFirstRef,
-    aboutBodySecondRef,
+    heroTitleRef,
+    heroSubtitleRef,
     personRef,
     personLeftHandRef,
     laptopLogoRef,
@@ -62,7 +61,7 @@ const useTypingAnimation = ({ body, title }) => {
   }, [fadeInTl, textTl, typingTl, screenTl])
 
   const resumeTypingAnimation = React.useCallback(() => {
-    textTl.restart().timeScale(4)
+    textTl.restart().timeScale(2)
     typingTl.resume()
     screenTl.play()
   }, [textTl, typingTl, screenTl])
@@ -103,7 +102,7 @@ const useTypingAnimation = ({ body, title }) => {
       )
     //animate text
     textTl
-      .to(aboutTitleRef.current, {
+      .to(heroTitleRef.current, {
         delay: 0.3,
         duration: 1.5,
         ease: SteppedEase.config(title.length),
@@ -112,19 +111,11 @@ const useTypingAnimation = ({ body, title }) => {
           newClass: "text-lightTheme-text dark:text-darkTheme-text",
         },
       })
-      .to(aboutBodyFirstRef.current, {
-        duration: 1,
-        ease: SteppedEase.config(body[0].length),
-        text: {
-          value: body[0],
-          newClass: "text-lightTheme-text dark:text-darkTheme-text",
-        },
-      })
-      .to(aboutBodySecondRef.current, {
+      .to(heroSubtitleRef.current, {
         duration: 1.5,
-        ease: SteppedEase.config(body[1].length),
+        ease: SteppedEase.config(subtitle.length),
         text: {
-          value: body[1],
+          value: subtitle,
           newClass: "text-lightTheme-text dark:text-darkTheme-text",
         },
         onComplete() {
@@ -132,26 +123,11 @@ const useTypingAnimation = ({ body, title }) => {
         },
       })
 
-    //clear text
-    clearTextTl.set(
-      [
-        aboutBodySecondRef.current,
-        aboutBodyFirstRef.current,
-        aboutTitleRef.current,
-      ],
-      {
-        text: {
-          value: "",
-        },
-      }
-    )
     //autoplay the animation
     startTypingAnimation()
   }, [
-    aboutBodyFirstRef,
-    aboutBodySecondRef,
-    aboutTitleRef,
-    body,
+    heroTitleRef,
+    heroSubtitleRef,
     clearTextTl,
     fadeInTl,
     laptopLogoRef,
@@ -163,10 +139,11 @@ const useTypingAnimation = ({ body, title }) => {
     stopTypingAnimation,
     textTl,
     title,
+    subtitle,
     typingTl,
   ])
 
-  return { startTypingAnimation, stopTypingAnimation, resumeTypingAnimation }
+  return { resumeTypingAnimation }
 }
 
 export default useTypingAnimation

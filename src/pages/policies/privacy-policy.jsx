@@ -23,7 +23,7 @@ const PrivacyPolicy = ({ data }) => {
       <SEO title={title} />
       <Layout>
         <StyledSection id="main">
-          <h1 className="text-4xl font-bold text-center mt-10">{title}</h1>
+          <h1 className="text-4xl font-normal text-center mt-10">{title}</h1>
           <MDXRenderer>{body}</MDXRenderer>
         </StyledSection>
       </Layout>

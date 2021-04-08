@@ -14,16 +14,16 @@ const LetsTalk = ({ data }) => {
   return (
     <section id="lets-talk" className="flex flex-col items-center">
       <SectionHeader className="text-center">{title}</SectionHeader>
-      <div className="mt-4 text-center text-xl">
+      <div className="mt-4 text-center">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <GatsbyImage
         image={getImage(profileImage)}
         alt="profile-image"
-        className="w-32"
+        className="w-36 mt-4"
       />
-      <SocialLinks className="mt-4" />
-      <ContactForm className="bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl mx-auto w-full" />
+      <SocialLinks className="mt-8" />
+      <ContactForm className="mt-4 bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl mx-auto w-full" />
     </section>
   )
 }

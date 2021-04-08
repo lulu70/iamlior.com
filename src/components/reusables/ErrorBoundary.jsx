@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
       return (
         <Layout>
           <section id="error-boundary" className="mt-32 text-center mx-auto">
-            <h1 className="text-4xl font-bold mb-3">Something went wrong</h1>
+            <h1 className="text-4xl font-normal mb-3">Something went wrong</h1>
             <p>Please try to refresh the page</p>
           </section>
         </Layout>

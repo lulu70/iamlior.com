@@ -5,17 +5,17 @@ import MailIcon from "./MailIcon"
 import TweeterIcon from "./TweeterIcon"
 
 const Col = ({ links }) => (
-  <div className="w-32">
+  <div className="w-32 lg:w-40 lg:text-lg">
     {links.map(({ id, displayName, url, icon: Icon }) => (
       <a
         key={id}
         href={url}
         target="_blank"
         rel="noreferrer"
-        className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 rounded-full flex justify-between items-center focus mb-4"
+        className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 lg:px-4 lg:py-2 rounded-full flex justify-between items-center focus mb-4"
       >
         <span>{displayName}</span>
-        {Icon && <Icon className="w-5 fill-current" />}
+        {Icon && <Icon className="w-5 lg:w-8 fill-current" />}
       </a>
     ))}
   </div>

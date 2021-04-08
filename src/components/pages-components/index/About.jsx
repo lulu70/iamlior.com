@@ -1,47 +1,25 @@
 import React from "react"
-import PersonSVG from "../../reusables/PersonSVG"
 import SectionHeader from "../../reusables/SectionHeader"
-import { RefsContext } from "../../../context/RefsContextProvider"
-import useTypingAnimation from "../../../hooks/useTypingAnimation"
+import SocialLinks from "../../reusables/SocialLinks"
 
 const About = ({ data }) => {
   const {
     frontmatter: { title, body },
   } = data.childMdx
-  const {
-    aboutTitleRef,
-    aboutBodyFirstRef,
-    aboutBodySecondRef,
-  } = React.useContext(RefsContext)
-  const { resumeTypingAnimation, stopTypingAnimation } = useTypingAnimation({
-    title,
-    body,
-  })
 
   return (
-    <section id="about" className="">
+    <section id="about" className="text-center">
       <SectionHeader>
-        <div
-          ref={aboutTitleRef}
-          className="dark:text-lightTheme-text text-darkTheme-text"
-        >
-          {title}
-        </div>
+        <div>{title}</div>
       </SectionHeader>
-      <p className="mt-4 dark:text-lightTheme-text text-darkTheme-text text-xl max-w-lg">
-        <span ref={aboutBodyFirstRef}>{body[0]}</span>
+      <p className="mt-4 max-w-lg mx-auto text-2xl">
+        <span>{body[0]}</span>
         <br />
-        <span ref={aboutBodySecondRef}>{body[1]}</span>
+        <span>{body[1]}</span>
       </p>
-      <PersonSVG
-        onPointerEnter={() => {
-          resumeTypingAnimation()
-        }}
-        onPointerLeave={() => {
-          stopTypingAnimation()
-        }}
-        className="rounded-2xl md:-mt-24 opacity-0 invisible max-w-lg ml-auto"
-      />
+      <div className="mt-8">
+        <SocialLinks />
+      </div>
     </section>
   )
 }

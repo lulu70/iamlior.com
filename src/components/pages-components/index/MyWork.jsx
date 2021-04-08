@@ -10,9 +10,9 @@ const MyWork = ({ data, projects }) => {
   const title = data.childMdx.frontmatter.title
 
   return (
-    <section id="my-work" className="space-y-4">
+    <section id="my-work" className="">
       <SectionHeader>{title}</SectionHeader>
-      <div id="projects-container">
+      <div id="projects-container" className="mt-4 space-y-12">
         {projects.nodes.map(
           (
             {
@@ -36,7 +36,7 @@ const MyWork = ({ data, projects }) => {
               <div
                 id="project-container"
                 key={id}
-                className={`bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4 max-w-2xl mt-12 ${
+                className={`bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4 max-w-2xl ${
                   index % 2 !== 0 ? "ml-auto" : "mr-auto"
                 }`}
               >
@@ -45,7 +45,7 @@ const MyWork = ({ data, projects }) => {
                     {emoji}
                   </span>
                   <span id="category">{category}</span>
-                  <h4 id="title" className="text-xl font-semibold mt-4">
+                  <h4 id="title" className="text-xl font-normal mt-4">
                     {title}
                   </h4>
                   <MDXRenderer>{body}</MDXRenderer>

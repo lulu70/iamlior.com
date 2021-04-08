@@ -63,7 +63,7 @@ const ContactForm = props => {
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
     >
-      <h4 className="text-2xl font-semibold">Send Me A message</h4>
+      <h4 className="text-2xl font-normal">Send Me A message</h4>
       <div className="space-y-5 mt-5">
         <label className="block" htmlFor="full-name">
           <span>Full name: </span>
