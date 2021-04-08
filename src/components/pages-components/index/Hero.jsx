@@ -10,7 +10,7 @@ const Hero = ({ data }) => {
     subtitle,
   })
   return (
-    <section id="hero" className="mt-24 lg:text-left">
+    <section id="hero" className="mt-8 lg:mt-24 lg:text-left">
       <div className="dark:text-darkTheme-bg text-lightTheme-bg">
         <h1 ref={heroTitleRef} className="text-6xl">
           {title}
