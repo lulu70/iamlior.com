@@ -1,15 +1,15 @@
 import React from "react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import SectionHeader from "../../reusables/SectionHeader"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SocialLinks from "../../reusables/SocialLinks"
 import ContactForm from "../../reusables/ContactForm"
+import Avatar from "../../reusables/Avatar"
 
 const LetsTalk = ({ data }) => {
   const mdx = data.childMdx
   const {
     body,
-    frontmatter: { title, profileImage },
+    frontmatter: { title },
   } = mdx
   return (
     <section id="lets-talk" className="flex flex-col">
@@ -17,11 +17,7 @@ const LetsTalk = ({ data }) => {
       <div className="mt-4">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
-      <GatsbyImage
-        image={getImage(profileImage)}
-        alt="profile-image"
-        className="w-36 mt-4"
-      />
+      <Avatar />
       <SocialLinks className="mt-8" />
       <ContactForm className="mt-4 bg-lightTheme-primary dark:bg-darkTheme-primary p-5 rounded-lg flex-1 max-w-xl w-full" />
     </section>

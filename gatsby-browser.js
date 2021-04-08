@@ -11,10 +11,10 @@ export const wrapRootElement = ({ element }) => {
           style={{
             color: "white",
             textAlign: "center",
-            fontSize: "5rem",
+            fontSize: "3rem",
           }}
         >
-          This Browser is not supported
+          This browser is unfortunately not supported
         </h1>
       )
     }
