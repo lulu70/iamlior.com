@@ -10,7 +10,7 @@ const About = ({ data }) => {
   return (
     <section id="about" className="max-w-lg">
       <SectionHeader className="">{title}</SectionHeader>
-      <p className="mt-4  mx-auto text-xl lg:text-2xl">
+      <p className="mt-4 mx-auto lg:text-2xl">
         <span>{body[0]}</span>
         <br />
         <span>{body[1]}</span>

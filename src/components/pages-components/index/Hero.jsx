@@ -10,7 +10,7 @@ const Hero = ({ data }) => {
     subtitle,
   })
   return (
-    <section id="hero" className="mt-8 lg:mt-24 text-center lg:text-left">
+    <section id="hero" className="mt-24 lg:text-left">
       <div className="dark:text-darkTheme-bg text-lightTheme-bg">
         <h1 ref={heroTitleRef} className="text-6xl">
           {title}
@@ -24,7 +24,7 @@ const Hero = ({ data }) => {
           onPointerEnter={() => {
             resumeTypingAnimation()
           }}
-          className="rounded-2xl opacity-0 invisible max-w-md lg:max-w-xl mx-auto lg:mr-0 lg:ml-auto mt-12 lg:mt-0"
+          className="rounded-2xl opacity-0 invisible max-w-md lg:max-w-xl mr-0 ml-auto mt-12 lg:mt-0"
         />
       </div>
     </section>
