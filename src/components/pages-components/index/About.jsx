@@ -12,7 +12,7 @@ const About = ({ data }) => {
       <SectionHeader>
         <div>{title}</div>
       </SectionHeader>
-      <p className="mt-4 max-w-lg mx-auto text-2xl">
+      <p className="mt-4 max-w-lg mx-auto text-xl lg:text-2xl">
         <span>{body[0]}</span>
         <br />
         <span>{body[1]}</span>
