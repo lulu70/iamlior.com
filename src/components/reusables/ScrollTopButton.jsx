@@ -1,6 +1,7 @@
 import React from "react"
 import debounce from "lodash/debounce"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 const ScrollTopButton = () => {
   const [showScroll, setShowScroll] = React.useState(false)
@@ -30,9 +31,9 @@ const ScrollTopButton = () => {
   return showScroll ? (
     <button
       type="button"
-      className={`bg-lightTheme-primary dark:bg-darkTheme-primary border border-lightTheme-text dark:border-darkTheme-text px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 ${
-        tabIsUsed ? "focus" : "focus:outline-none"
-      }`}
+      className={`bg-lightTheme-primary dark:bg-darkTheme-primary border border-lightTheme-text dark:border-darkTheme-text px-2 py-1 rounded-md fixed right-2 bottom-2 z-50 ${getClassNamesByTabIsUsedState(
+        tabIsUsed
+      )}`}
       onClick={scrollTop}
     >
       <svg

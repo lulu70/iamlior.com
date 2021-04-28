@@ -1,6 +1,7 @@
 import React from "react"
 import isBrowser from "../../helpers/isBrowser"
 import MainContext, { setDarkMode } from "../../context/MainContext"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 const DarkModeSwitch = ({ tabIsUsed }) => {
   const { darkMode, mainContextDispatch } = React.useContext(MainContext)
@@ -23,7 +24,7 @@ const DarkModeSwitch = ({ tabIsUsed }) => {
   }
   return (
     <button
-      className={`w-8 h-8 ml-2 ${tabIsUsed ? "focus" : "focus:outline-none"}`}
+      className={`w-8 h-8 ml-2 ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
       onClick={handleClick}
       aria-label="dark/light-mode"
     >

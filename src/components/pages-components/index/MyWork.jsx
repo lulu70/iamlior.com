@@ -4,6 +4,7 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import UnderlineText from "../../reusables/UnderlineText"
 import useTabIsUsed from "../../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
 
 const MyWork = ({ data, projects }) => {
   const tabIsUsed = useTabIsUsed()
@@ -52,9 +53,7 @@ const MyWork = ({ data, projects }) => {
                 </div>
                 <a
                   id={"link to" + title}
-                  className={`flex ${
-                    tabIsUsed ? "focus" : "focus:outline-none"
-                  }`}
+                  className={`flex ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
                   href={external}
                   target="_blank"
                   rel="noreferrer"
@@ -72,7 +71,9 @@ const MyWork = ({ data, projects }) => {
                 </div>
                 <a
                   id={"external link to" + title}
-                  className="focus inline-block"
+                  className={`${getClassNamesByTabIsUsedState(
+                    tabIsUsed
+                  )} inline-block`}
                   href={external}
                   target="_blank"
                   rel="noreferrer"

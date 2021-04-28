@@ -1,13 +1,22 @@
 import React from "react"
 import { Link } from "gatsby"
 import { links } from "../reusables/NavigationMenu"
+import useTabIsUsed from "../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
+
 const Footer = () => {
+  const tabIsUsed = useTabIsUsed()
+
   return (
     <footer className="pb-5 mt-auto">
       <div className="w-full text-center mx-auto">
         <nav className="flex flex-col lg:flex-row items-center justify-around mx-auto text-sm  bg-lightTheme-primary dark:bg-darkTheme-primary py-3 lg:space-x-5 space-y-4 lg:space-y-0">
           {links.map(link => (
-            <Link key={link.id} className="focus" to={link.slug}>
+            <Link
+              key={link.id}
+              className={getClassNamesByTabIsUsedState(tabIsUsed)}
+              to={link.slug}
+            >
               {link.text}
             </Link>
           ))}

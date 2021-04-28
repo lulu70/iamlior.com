@@ -1,6 +1,7 @@
 import React from "react"
 import { Link } from "gatsby"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 export const links = [
   { id: 0, text: "Hi, I Am Lior", slug: "/" },
@@ -30,9 +31,9 @@ const NavigationMenu = ({ className }) => {
         className={`relative z-10 block ml-auto ${className}`}
       >
         <button
-          className={`relative block h-10 w-10 z-10 ${
-            tabIsUsed ? "focus" : "focus:outline-none"
-          }`}
+          className={`relative block h-10 w-10 z-10 ${getClassNamesByTabIsUsedState(
+            tabIsUsed
+          )}`}
           aria-label="menu"
           onClick={() => {
             setIsOpen(isOpen => !isOpen)

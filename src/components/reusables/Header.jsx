@@ -4,6 +4,7 @@ import { Link } from "gatsby"
 import useTabIsUsed from "../../hooks/useTabIsUsed"
 import DarkModeSwitch from "./DarkModeSwitch"
 import SiteIcon from "./SiteIcon"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 const Header = () => {
   const tabIsUsed = useTabIsUsed()
@@ -13,9 +14,9 @@ const Header = () => {
       <Link
         to="/"
         aria-label="brand"
-        className={`flex text-3xl lg:text-4xl ${
-          tabIsUsed ? "focus" : "focus:outline-none"
-        }`}
+        className={`flex text-3xl lg:text-4xl ${getClassNamesByTabIsUsedState(
+          tabIsUsed
+        )}`}
       >
         <SiteIcon className="w-20 h-full fill-current" />
       </Link>

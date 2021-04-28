@@ -39,6 +39,7 @@ export const query = graphql`
           body
           title
         }
+        body
       }
     }
     tech: file(relativePath: { eq: "index/tech/tech.mdx" }) {
