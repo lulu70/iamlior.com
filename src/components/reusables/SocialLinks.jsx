@@ -26,7 +26,7 @@ const SocialLinks = ({ className }) => {
       id: 0,
       name: "email",
       displayName: "Email",
-      url: "mailto:liorco7079@gmail.com",
+      url: "mailto:dev@iamlior.com",
       icon: MailIcon,
     },
     {

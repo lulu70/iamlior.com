@@ -10,7 +10,7 @@ module.exports = {
     title: `I Am Lior`,
     description: `A portfolio site of lior cohen`,
     author: `@liorcohen`,
-    siteUrl: `https://iamlior.netlify.app/`,
+    siteUrl: `https://www.iamlior.com/`,
     image: "/programmer.jpg",
   },
   plugins: [
