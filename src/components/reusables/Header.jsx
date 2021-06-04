@@ -12,7 +12,7 @@ const Header = () => {
 
   return (
     <header className="z-50 sticky top-0 bg-lightTheme-bg dark:bg-darkTheme-bg flex flex-col">
-      <div className="flex items-center py-2">
+      <div className="flex items-center py-2 px-5 lg:px-0">
         <Link
           to="/"
           aria-label="brand"
