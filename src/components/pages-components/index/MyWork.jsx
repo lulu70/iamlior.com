@@ -5,6 +5,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import UnderlineText from "../../reusables/UnderlineText"
 import useTabIsUsed from "../../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
+import Pointer from "../../reusables/Pointer"
 
 const MyWork = ({ data, projects }) => {
   const tabIsUsed = useTabIsUsed()
@@ -53,7 +54,9 @@ const MyWork = ({ data, projects }) => {
                 </div>
                 <a
                   id={"link to" + title}
-                  className={`flex ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
+                  className={`flex relative overflow-hidden ${getClassNamesByTabIsUsedState(
+                    tabIsUsed
+                  )}`}
                   href={external}
                   target="_blank"
                   rel="noreferrer"
@@ -63,6 +66,7 @@ const MyWork = ({ data, projects }) => {
                     alt={title}
                     className="rounded-lg"
                   />
+                  <Pointer />
                 </a>
                 <div id="tags-container" className="flex flex-wrap max-w-xl">
                   {tags.map(tag => (
