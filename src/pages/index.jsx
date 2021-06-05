@@ -14,7 +14,7 @@ export default function Home({ data }) {
     " " +
     data.hero.childMdx.frontmatter.subtitle +
     " " +
-    data.about.childMdx.frontmatter.body
+    data.about.childMdx.frontmatter.body.join(" ")
   return (
     <>
       <SEO title="Home" description={description} />
