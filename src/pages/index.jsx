@@ -9,9 +9,15 @@ import MyWork from "../components/pages-components/index/MyWork"
 import LetsTalk from "../components/pages-components/index/LetsTalk"
 
 export default function Home({ data }) {
+  const description =
+    data.hero.childMdx.frontmatter.title +
+    " " +
+    data.hero.childMdx.frontmatter.subtitle +
+    " " +
+    data.about.childMdx.frontmatter.body
   return (
     <>
-      <SEO title="Home" />
+      <SEO title="Home" description={description} />
       <Layout>
         <Hero data={data.hero} />
         <About data={data.about} />

@@ -42,7 +42,7 @@ const MyWork = ({ data, projects }) => {
                   index % 2 !== 0 ? "ml-auto" : "mr-auto"
                 }`}
               >
-                <div id="description-container" className="max-w-xl">
+                <div id="project-description-container" className="max-w-xl">
                   <span id="emoji" className="mr-2">
                     {emoji}
                   </span>
