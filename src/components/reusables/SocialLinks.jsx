@@ -3,6 +3,7 @@ import FacebookIcon from "./FacebookIcon"
 import GithubIcon from "./GithubIcon"
 import MailIcon from "./MailIcon"
 import TweeterIcon from "./TweeterIcon"
+import LinkedInIcon from "./LinkedInIcon"
 
 const Col = ({ links }) => (
   <div className="w-32 lg:w-40 lg:text-lg">
@@ -38,10 +39,10 @@ const SocialLinks = ({ className }) => {
     },
     {
       id: 2,
-      name: "github",
-      displayName: "Github",
-      url: "https://github.com/lulu70",
-      icon: GithubIcon,
+      name: "linkedin",
+      displayName: "Linked in",
+      url: "https://www.linkedin.com/in/iamliorcohen/",
+      icon: LinkedInIcon,
     },
     {
       id: 3,
@@ -50,12 +51,19 @@ const SocialLinks = ({ className }) => {
       url: "https://twitter.com/liorco70",
       icon: TweeterIcon,
     },
+    {
+      id: 4,
+      name: "github",
+      displayName: "Github",
+      url: "https://github.com/lulu70",
+      icon: GithubIcon,
+    },
   ]
-  const slicer = Math.round(links.length / 2)
   return (
-    <div className={`flex space-x-4 ${className}`}>
-      <Col links={links.slice(0, slicer)} />
-      <Col links={links.slice(slicer)} />
+    <div className={`flex space-x-4 ${className} `}>
+      <Col links={links.slice(0, 2)} />
+      <Col links={links.slice(2, 4)} />
+      <Col links={links.slice(4)} />
     </div>
   )
 }
