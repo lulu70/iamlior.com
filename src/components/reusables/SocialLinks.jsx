@@ -6,7 +6,7 @@ import TweeterIcon from "./TweeterIcon"
 import LinkedInIcon from "./LinkedInIcon"
 
 const Col = ({ links }) => (
-  <div className="w-32 lg:w-40 lg:text-lg">
+  <div className="w-32 lg:w-40 lg:text-lg mr-4">
     {links.map(({ id, displayName, url, icon: Icon }) => (
       <a
         key={id}
@@ -60,7 +60,7 @@ const SocialLinks = ({ className }) => {
     },
   ]
   return (
-    <div className={`flex space-x-4 ${className} `}>
+    <div className={`flex flex-wrap justify-start ${className} `}>
       <Col links={links.slice(0, 2)} />
       <Col links={links.slice(2, 4)} />
       <Col links={links.slice(4)} />
