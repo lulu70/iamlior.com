@@ -18,6 +18,8 @@ import ReduxIcon from "../../reusables/ReduxIcon"
 import TailwindIcon from "../../reusables/TailwindIcon"
 import BootstrapIcon from "../../reusables/BootstrapIcon"
 import StyledComponentsIcon from "../../reusables/StyledComponentsIcon"
+import GsapIcon from "../../reusables/GsapIcon"
+import ReactSpringIcon from "../../reusables/ReactSpringIcon"
 
 const Col = ({ links }) => {
   const icons = {
@@ -28,6 +30,7 @@ const Col = ({ links }) => {
     Electron: ElectronIcon,
     Tailwindcss: TailwindIcon,
     "Styled Components": StyledComponentsIcon,
+    GreenSock: GsapIcon,
     Bootstrap: BootstrapIcon,
     Javascript: JavascriptIcon,
     Html: HtmlIcon,
@@ -39,6 +42,7 @@ const Col = ({ links }) => {
     GraphQL: GraphQLIcon,
     Apollo: ApolloIcon,
     Redux: ReduxIcon,
+    "React Spring": ReactSpringIcon,
   }
   return (
     <div className="space-y-4 pb-4">
