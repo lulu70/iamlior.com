@@ -4,6 +4,7 @@ import GithubIcon from "./GithubIcon"
 import MailIcon from "./MailIcon"
 import TweeterIcon from "./TweeterIcon"
 import LinkedInIcon from "./LinkedInIcon"
+import DocumentIcon from "./DocumentIcon"
 
 const Col = ({ links }) => (
   <div className="w-32 lg:w-40 lg:text-lg mr-4">
@@ -16,7 +17,7 @@ const Col = ({ links }) => (
         className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 lg:px-4 lg:py-2 rounded-full flex justify-between items-center focus mb-4"
       >
         <span>{displayName}</span>
-        {Icon && <Icon className="w-5 lg:w-8 fill-current" />}
+        {Icon && <Icon className="w-5 h-5 lg:w-8 lg:h-8 fill-current" />}
       </a>
     ))}
   </div>
@@ -41,7 +42,7 @@ const SocialLinks = ({ className }) => {
       id: 2,
       name: "linkedin",
       displayName: "Linked in",
-      url: "https://www.linkedin.com/in/iamlior/",
+      url: "https://www.linkedin.com/in/iamlior",
       icon: LinkedInIcon,
     },
     {
@@ -57,6 +58,14 @@ const SocialLinks = ({ className }) => {
       displayName: "Github",
       url: "https://github.com/lulu70",
       icon: GithubIcon,
+    },
+    {
+      id: 5,
+      name: "resume",
+      displayName: "Resume",
+      url:
+        "https://firebasestorage.googleapis.com/v0/b/iamlior.appspot.com/o/Lior%20Cohen%20Resume%20Graphic_v2.pdf?alt=media&token=825d75fd-7413-46ee-9d56-871d7efc2f37",
+      icon: DocumentIcon,
     },
   ]
   return (
