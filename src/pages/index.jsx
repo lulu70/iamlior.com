@@ -9,12 +9,10 @@ import MyWork from "../components/pages-components/index/MyWork"
 import LetsTalk from "../components/pages-components/index/LetsTalk"
 
 export default function Home({ data }) {
-  const description =
-    data.hero.childMdx.frontmatter.title +
-    " " +
-    data.hero.childMdx.frontmatter.subtitle +
-    " " +
-    data.about.childMdx.frontmatter.body.join(" ")
+  const description = data.about.childMdx.mdxAST.children
+    .filter(child => child.type === "paragraph")
+    .map(child => child.children[0].value)
+    .join(" ")
   return (
     <>
       <SEO title="Home" description={description} />
@@ -42,10 +40,10 @@ export const query = graphql`
     about: file(relativePath: { eq: "index/about/about.mdx" }) {
       childMdx {
         frontmatter {
-          body
           title
         }
         body
+        mdxAST
       }
     }
     tech: file(relativePath: { eq: "index/tech/tech.mdx" }) {

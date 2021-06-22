@@ -41,7 +41,7 @@ const SocialLinks = ({ className }) => {
       id: 2,
       name: "linkedin",
       displayName: "Linked in",
-      url: "https://www.linkedin.com/in/iamliorcohen/",
+      url: "https://www.linkedin.com/in/iamlior/",
       icon: LinkedInIcon,
     },
     {

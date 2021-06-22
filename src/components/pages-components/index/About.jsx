@@ -1,18 +1,18 @@
 import React from "react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import SectionHeader from "../../reusables/SectionHeader"
 import SocialLinks from "../../reusables/SocialLinks"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
 const About = ({ data }) => {
   const {
-    body,
     frontmatter: { title },
+    body,
   } = data.childMdx
 
   return (
-    <section id="about" className="max-w-2xl">
+    <section id="about" className="max-w-xl">
       <SectionHeader className="">{title}</SectionHeader>
-      <div className="mt-4 mx-auto lg:text-2xl">
+      <div className="mx-auto lg:text-lg flex flex-col mt-4 space-y-4">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <div className="mt-8">

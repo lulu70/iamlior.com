@@ -38,7 +38,7 @@ const MyWork = ({ data, projects }) => {
               <div
                 id="project-container"
                 key={id}
-                className={`bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4 max-w-2xl ${
+                className={`bg-lightTheme-primary dark:bg-darkTheme-primary p-8 rounded-3xl space-y-4 max-w-xl ${
                   index % 2 !== 0 ? "ml-auto" : "mr-auto"
                 }`}
               >
