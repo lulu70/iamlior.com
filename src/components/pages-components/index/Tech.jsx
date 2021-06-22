@@ -15,6 +15,9 @@ import ContentfulIcon from "../../reusables/ContentfulIcon"
 import GraphQLIcon from "../../reusables/GraphQLIcon"
 import ApolloIcon from "../../reusables/ApolloIcon"
 import ReduxIcon from "../../reusables/ReduxIcon"
+import TailwindIcon from "../../reusables/TailwindIcon"
+import BootstrapIcon from "../../reusables/BootstrapIcon"
+import StyledComponentsIcon from "../../reusables/StyledComponentsIcon"
 
 const Col = ({ links }) => {
   const icons = {
@@ -23,6 +26,9 @@ const Col = ({ links }) => {
     Shopify: ShopifyIcon,
     Gatsby: GatsbyIcon,
     Electron: ElectronIcon,
+    Tailwindcss: TailwindIcon,
+    "Styled Components": StyledComponentsIcon,
+    Bootstrap: BootstrapIcon,
     Javascript: JavascriptIcon,
     Html: HtmlIcon,
     Css: CssIcon,
@@ -43,7 +49,7 @@ const Col = ({ links }) => {
             key={id}
             className="bg-lightTheme-primary dark:bg-darkTheme-primary px-4 py-2 rounded-full flex items-center w-64"
           >
-            <Icon className="h-12 mr-2" />
+            <Icon className="w-12 h-12 mr-2" />
             <span>{name}</span>
           </div>
         )
