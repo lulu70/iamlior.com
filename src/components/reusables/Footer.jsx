@@ -1,11 +1,11 @@
 import React from "react"
 import { Link } from "gatsby"
 import { links } from "../reusables/NavigationMenu"
-import useTabIsUsed from "../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
+import MainContext from "../../context/MainContext"
 
 const Footer = () => {
-  const tabIsUsed = useTabIsUsed()
+  const { tabIsUsed } = React.useContext(MainContext)
 
   return (
     <footer className="pb-5 mt-auto">

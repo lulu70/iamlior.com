@@ -3,14 +3,13 @@ import SectionHeader from "../../reusables/SectionHeader"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import UnderlineText from "../../reusables/UnderlineText"
-import useTabIsUsed from "../../../hooks/useTabIsUsed"
+import MainContext from "../../../context/MainContext"
 import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
 import Pointer from "../../reusables/Pointer"
 
 const MyWork = ({ data, projects }) => {
-  const tabIsUsed = useTabIsUsed()
   const title = data.childMdx.frontmatter.title
-
+  const { tabIsUsed } = React.useContext(MainContext)
   return (
     <section id="my-work" className="">
       <SectionHeader>{title}</SectionHeader>
@@ -75,9 +74,9 @@ const MyWork = ({ data, projects }) => {
                 </div>
                 <a
                   id={"external link to" + title}
-                  className={`${getClassNamesByTabIsUsedState(
+                  className={`inline-block ${getClassNamesByTabIsUsedState(
                     tabIsUsed
-                  )} inline-block`}
+                  )}`}
                   href={external}
                   target="_blank"
                   rel="noreferrer"

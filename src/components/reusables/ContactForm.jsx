@@ -1,9 +1,9 @@
 import React from "react"
 import { navigate } from "gatsby"
-import useTabIsUsed from "../../hooks/useTabIsUsed"
 import { css } from "styled-components"
 import tw from "twin.macro"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
+import MainContext from "../../context/MainContext"
 
 const inputStyles = css`
   ${tw`mt-1 block w-full p-2 bg-lightTheme-bg dark:bg-darkTheme-bg border-0 border-b-4 dark:border-b-2 border-lightTheme-bg dark:border-darkTheme-bg focus:border-accent focus:ring-0`}
@@ -23,9 +23,7 @@ const ContactForm = props => {
       setValid(false)
     }
   }, [state])
-
-  const tabIsdUsed = useTabIsUsed()
-
+  const { tabIsUsed } = React.useContext(MainContext)
   function handleChange(e) {
     setState({ ...state, [e.target.name]: e.target.value })
   }
@@ -105,7 +103,7 @@ const ContactForm = props => {
           type="submit"
           className={`bg-lightTheme-bg dark:bg-darkTheme-bg px-2 py-1 rounded-full w-32 ${
             !valid && "opacity-40 cursor-default"
-          } ${getClassNamesByTabIsUsedState(tabIsdUsed)}`}
+          } ${getClassNamesByTabIsUsedState(tabIsUsed)}`}
         >
           Send
         </button>

@@ -1,7 +1,9 @@
 import React from "react"
+import useTabIsUsed from "../hooks/useTabIsUsed"
 import MainContext, {
   mainContextReducer,
   initialStoreState,
+  setTabIsUsed,
 } from "./MainContext"
 
 const MainContextProvider = ({ children }) => {
@@ -9,6 +11,7 @@ const MainContextProvider = ({ children }) => {
     mainContextReducer,
     initialStoreState
   )
+  useTabIsUsed({ mainContextDispatch, setTabIsUsed })
   return (
     <MainContext.Provider
       value={{

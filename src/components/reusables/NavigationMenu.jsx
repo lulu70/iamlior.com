@@ -1,6 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import useTabIsUsed from "../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 export const links = [
@@ -10,9 +9,8 @@ export const links = [
   { id: 3, text: "Tech I Use", slug: "/#tech" },
   { id: 4, text: "Lets Talk", slug: "/#lets-talk" },
 ]
-const NavigationMenu = ({ className }) => {
+const NavigationMenu = ({ className, tabIsUsed }) => {
   const [isOpen, setIsOpen] = React.useState(false)
-  const tabIsUsed = useTabIsUsed()
   React.useEffect(() => {
     function handleKeydown(e) {
       if (e.key === "Esc" || e.key === "Escape") {
@@ -76,7 +74,9 @@ const NavigationMenu = ({ className }) => {
                   key={id}
                   to={slug}
                   onClick={() => setIsOpen(false)}
-                  className="block py-4 hover:bg-lightTheme-text hover:text-lightTheme-bg dark:hover:bg-darkTheme-text dark:hover:text-darkTheme-bg focus text-xl"
+                  className={`block py-4 hover:bg-lightTheme-text hover:text-lightTheme-bg dark:hover:bg-darkTheme-text dark:hover:text-darkTheme-bg text-xl ${getClassNamesByTabIsUsedState(
+                    tabIsUsed
+                  )}`}
                 >
                   {text}
                 </Link>

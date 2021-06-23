@@ -5,23 +5,31 @@ import MailIcon from "./MailIcon"
 import TweeterIcon from "./TweeterIcon"
 import LinkedInIcon from "./LinkedInIcon"
 import DocumentIcon from "./DocumentIcon"
+import MainContext from "../../context/MainContext"
+import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
-const Col = ({ links }) => (
-  <div className="w-32 lg:w-40 lg:text-lg mr-4">
-    {links.map(({ id, displayName, url, icon: Icon }) => (
-      <a
-        key={id}
-        href={url}
-        target="_blank"
-        rel="noreferrer"
-        className="bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 lg:px-4 lg:py-2 rounded-full flex justify-between items-center focus mb-4"
-      >
-        <span>{displayName}</span>
-        {Icon && <Icon className="w-5 h-5 lg:w-8 lg:h-8 fill-current" />}
-      </a>
-    ))}
-  </div>
-)
+const Col = ({ links }) => {
+  const { tabIsUsed } = React.useContext(MainContext)
+
+  return (
+    <div className="w-32 lg:w-40 lg:text-lg mr-4">
+      {links.map(({ id, displayName, url, icon: Icon }) => (
+        <a
+          key={id}
+          href={url}
+          target="_blank"
+          rel="noreferrer"
+          className={`bg-lightTheme-primary dark:bg-darkTheme-primary px-3 py-1 lg:px-4 lg:py-2 rounded-full flex justify-between items-center mb-4 ${getClassNamesByTabIsUsedState(
+            tabIsUsed
+          )}`}
+        >
+          <span>{displayName}</span>
+          {Icon && <Icon className="w-5 h-5 lg:w-8 lg:h-8 fill-current" />}
+        </a>
+      ))}
+    </div>
+  )
+}
 const SocialLinks = ({ className }) => {
   const links = [
     {

@@ -2,12 +2,12 @@ import React from "react"
 import { Link } from "gatsby"
 import MainContext, { setCookieConcent } from "../../context/MainContext"
 import isBrowser from "../../helpers/isBrowser"
-import useTabIsUsed from "../../hooks/useTabIsUsed"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
 const CookieConsent = () => {
-  const { cookieConcent, mainContextDispatch } = React.useContext(MainContext)
-
+  const { cookieConcent, mainContextDispatch, tabIsUsed } = React.useContext(
+    MainContext
+  )
   //set cookie concent from local storage
   React.useEffect(() => {
     const cookieConcent = isBrowser()
@@ -24,7 +24,6 @@ const CookieConsent = () => {
       localStorage.setItem("cookie_concent", "true")
     }
   }
-  const tabIsUsed = useTabIsUsed()
   return !cookieConcent ? (
     <div
       className="bg-darkTheme-bg text-darkTheme-text dark:bg-darkTheme-primary w-full z-40 fixed bottom-0 right-0 left-0 small m-0 text-center py-2"
@@ -33,7 +32,9 @@ const CookieConsent = () => {
       We are using cookies to ensure best experience on our website.{" "}
       <Link
         to="/policies/privacy-policy"
-        className="p-1 rounded-lg text-accent focus"
+        className={`p-1 rounded-lg text-accent ${getClassNamesByTabIsUsedState(
+          tabIsUsed
+        )}`}
       >
         Privacy policy
       </Link>{" "}
