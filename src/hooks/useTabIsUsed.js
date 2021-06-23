@@ -17,7 +17,7 @@ const useTabIsUsed = ({ mainContextDispatch, setTabIsUsed }) => {
         window.removeEventListener("keydown", handleFirstTab)
       }
     }
-  }, [])
+  }, [mainContextDispatch, setTabIsUsed])
 
   // mousedown event listener to check if user is not tabbing
   React.useEffect(() => {
@@ -32,7 +32,7 @@ const useTabIsUsed = ({ mainContextDispatch, setTabIsUsed }) => {
         window.removeEventListener("mousedown", handleMouseDownOnce)
       }
     }
-  }, [])
+  }, [setTabIsUsed, mainContextDispatch])
 }
 
 export default useTabIsUsed
