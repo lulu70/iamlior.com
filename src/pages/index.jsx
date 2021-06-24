@@ -9,10 +9,10 @@ import MyWork from "../components/pages-components/index/MyWork"
 import LetsTalk from "../components/pages-components/index/LetsTalk"
 
 export default function Home({ data }) {
-  const description = data.about.childMdx.mdxAST.children
-    .filter(child => child.type === "paragraph")
-    .map(child => child.children[0].value)
-    .join(" ")
+  //getting first paragraph of the about section for the description tag
+  const description = data.about.childMdx.mdxAST.children.filter(
+    child => child.type === "paragraph"
+  )[0].children[0].value
   return (
     <>
       <SEO title="Home" description={description} />
