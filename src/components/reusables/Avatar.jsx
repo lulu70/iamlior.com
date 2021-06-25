@@ -15,7 +15,8 @@ const Avatar = ({ className }) => {
     <GatsbyImage
       image={getImage(data.file.childImageSharp.gatsbyImageData)}
       alt="profile-image"
-      className={`w-36 ${className}`}
+      className={`w-36 mt-4 ${className}`}
+      imgStyle={{ borderRadius: "9999px" }}
     />
   )
 }
