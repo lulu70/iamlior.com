@@ -72,7 +72,7 @@ const SocialLinks = ({ className }) => {
       name: "resume",
       displayName: "Resume",
       url:
-        "https://firebasestorage.googleapis.com/v0/b/iamlior.appspot.com/o/Lior%20Cohen%20Resume%20Graphic_v2.pdf?alt=media&token=825d75fd-7413-46ee-9d56-871d7efc2f37",
+        "https://firebasestorage.googleapis.com/v0/b/iamlior.appspot.com/o/Lior%20Cohen%20Graphic%20Resume.pdf?alt=media&token=dbc019ea-631d-400e-96a1-f6660379cebf",
       icon: DocumentIcon,
     },
   ]
