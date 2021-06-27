@@ -71,8 +71,7 @@ const SocialLinks = ({ className }) => {
       id: 5,
       name: "resume",
       displayName: "Resume",
-      url:
-        "https://drive.google.com/file/d/1oHZ9MynQh_UWQz3_PCpEze-P5uEG4jwx/view?usp=sharing",
+      url: "/resume.pdf",
       icon: DocumentIcon,
     },
   ]
