@@ -1,6 +1,6 @@
 import React from "react"
 import { navigate } from "gatsby"
-import { css } from "styled-components"
+import styled, { css } from "styled-components"
 import tw from "twin.macro"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 import MainContext from "../../context/MainContext"
@@ -8,13 +8,24 @@ import MainContext from "../../context/MainContext"
 const inputStyles = css`
   ${tw`mt-1 block w-full p-2 bg-lightTheme-bg dark:bg-darkTheme-bg border-0 border-b-4 dark:border-b-2 border-lightTheme-bg dark:border-darkTheme-bg focus:border-accent focus:ring-0`}
 `
+const StyledInput = styled.input`
+  ${inputStyles}
+`
+const StyledTextArea = styled.textarea`
+  ${inputStyles}
+`
 
-const ContactForm = props => {
-  const [state, setState] = React.useState({})
+const ContactForm = (props: { className: string }) => {
+  const initialState = {
+    "full-name": "",
+    email: "",
+    message: "",
+  }
+  const [state, setState] = React.useState(initialState)
   const [valid, setValid] = React.useState(false)
 
   React.useEffect(() => {
-    function isDirty(inputName) {
+    function isDirty(inputName: "full-name" | "email" | "message") {
       return state?.[inputName]?.length > 0
     }
     if (isDirty("full-name") && isDirty("email") && isDirty("message")) {
@@ -24,30 +35,38 @@ const ContactForm = props => {
     }
   }, [state])
   const { tabIsUsed } = React.useContext(MainContext)
-  function handleChange(e) {
+  function handleChange(
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) {
     setState({ ...state, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e) {
+  function handleSubmit(e: React.SyntheticEvent) {
     e.preventDefault()
-    const form = e.target
-    fetch("/", {
-      method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: encode({
-        "form-name": form.getAttribute("name"),
-        ...state,
-      }),
-    })
-      .then(() => {
-        setState({})
-        navigate(form.getAttribute("action"))
+    const form = e.target as HTMLFormElement
+    const nameAttribute = form.getAttribute("name")
+    if (nameAttribute) {
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: encode({
+          "form-name": nameAttribute,
+          ...state,
+        }),
       })
-      .catch(error => {
-        throw new Error(error)
-      })
+        .then(() => {
+          setState(initialState)
+          const actionAttribute = form.getAttribute("action")
+          if (actionAttribute) {
+            navigate(actionAttribute)
+          }
+        })
+        .catch(error => {
+          throw new Error(error)
+        })
+    }
   }
-  function encode(data) {
+  function encode(data: { [index: string]: string; message: string }) {
     return Object.keys(data)
       .map(key => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
       .join("&")
@@ -67,36 +86,33 @@ const ContactForm = props => {
         <label className="block" htmlFor="full-name">
           <span>Full name: </span>
           <input type="hidden" name="form-name" value="contact" />
-          <input
+          <StyledInput
             type="text"
             placeholder="John Doe"
             id="full-name"
             name="full-name"
-            css={inputStyles}
             onChange={handleChange}
           />
         </label>
         <label className="block" htmlFor="email">
           <span>Email address</span>
-          <input
+          <StyledInput
             id="email"
             type="email"
             name="email"
             placeholder="john@example.com"
-            css={inputStyles}
             onChange={handleChange}
           />
         </label>
         <label className="block" htmlFor="message">
           <span>Your Message</span>
-          <textarea
+          <StyledTextArea
             id="message"
             placeholder="Your message goes here..."
             name="message"
-            rows="2"
-            css={inputStyles}
+            rows={2}
             onChange={handleChange}
-          ></textarea>
+          ></StyledTextArea>
         </label>
         <button
           disabled={!valid}

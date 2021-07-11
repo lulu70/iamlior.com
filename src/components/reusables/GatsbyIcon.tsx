@@ -1,6 +1,6 @@
 import React from "react"
 
-function GatsbyIcon(props) {
+function GatsbyIcon(props: { className: string }) {
   return (
     <svg
       {...props}

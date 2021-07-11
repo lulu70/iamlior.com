@@ -1,6 +1,11 @@
 import React from "react"
 
-const StyledComponentsIcon = ({ className, ...props }) => {
+const StyledComponentsIcon = ({
+  className,
+  ...props
+}: {
+  className: string
+}) => {
   return (
     <span
       role="img"

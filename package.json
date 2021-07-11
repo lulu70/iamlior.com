@@ -53,6 +53,7 @@
     "@types/react-dom": "^17.0.9",
     "@types/react-helmet": "^6.1.2",
     "@types/styled-components": "^5.1.11",
+    "@types/uuid": "^8.3.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.20",
     "js-conditional-compile-loader": "^1.0.14",
     "prettier": "2.2.1",

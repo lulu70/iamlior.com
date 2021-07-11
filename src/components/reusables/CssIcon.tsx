@@ -1,6 +1,6 @@
 import React from "react"
 
-function CssIcon(props) {
+function CssIcon(props: { className: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1771 2500" {...props}>
       <path

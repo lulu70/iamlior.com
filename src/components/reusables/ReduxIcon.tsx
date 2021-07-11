@@ -1,6 +1,6 @@
 import React from "react"
 
-function ReduxIcon(props) {
+function ReduxIcon(props: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

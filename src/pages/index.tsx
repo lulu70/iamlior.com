@@ -4,13 +4,12 @@ import SEO from "../components/reusables/seo"
 import { graphql } from "gatsby"
 import Hero from "../components/pages-components/index/Hero"
 import About from "../components/pages-components/index/About"
-// import Tech from "../components/pages-components/index/Tech"
+import Tech from "../components/pages-components/index/Tech"
 import MyWork from "../components/pages-components/index/MyWork"
-// import LetsTalk from "../components/pages-components/index/LetsTalk"
+import LetsTalk from "../components/pages-components/index/LetsTalk"
 import { HomeQuery } from "../../gatsby-graphql"
 export default function Home({ data }: { data: HomeQuery }) {
   //getting first paragraph of the about section for the description tag
-
   const description = data?.about?.childMdx?.mdxAST.children.filter(
     (child: any) => child.type === "paragraph"
   )[0].children[0].value
@@ -21,8 +20,8 @@ export default function Home({ data }: { data: HomeQuery }) {
         <Hero data={data.hero} />
         <About data={data.about} />
         <MyWork data={data.myWork} projects={data.projects} />
-        {/* <Tech data={data.tech} /> */}
-        {/* <LetsTalk data={data.letsTalk} /> */}
+        <Tech data={data.tech} />
+        <LetsTalk data={data.letsTalk} />
       </Layout>
     </>
   )

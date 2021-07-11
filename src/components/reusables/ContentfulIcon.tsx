@@ -1,6 +1,6 @@
 import React from "react"
 
-function ContentfulIcon(props) {
+function ContentfulIcon(props: { className: string }) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" {...props}>
       <style>

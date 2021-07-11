@@ -20,8 +20,9 @@ import BootstrapIcon from "../../reusables/BootstrapIcon"
 import StyledComponentsIcon from "../../reusables/StyledComponentsIcon"
 import GsapIcon from "../../reusables/GsapIcon"
 import ReactSpringIcon from "../../reusables/ReactSpringIcon"
+import { HomeQuery, Maybe } from "../../../../gatsby-graphql"
 
-const Col = ({ links }) => {
+const Col = ({ links }: { links: { id: string; name: Maybe<string> }[] }) => {
   const icons = {
     React: ReactIcon,
     "React Native": ReactIcon,
@@ -47,7 +48,8 @@ const Col = ({ links }) => {
   return (
     <div className="space-y-4 pb-4">
       {links.map(({ id, name }) => {
-        const Icon = icons[name]
+        const typedKey = name as keyof typeof icons
+        const Icon = icons[typedKey]
         return (
           <div
             key={id}
@@ -62,19 +64,22 @@ const Col = ({ links }) => {
   )
 }
 
-const Tech = ({ data }) => {
-  const { title, links: linksData } = data.childMdx.frontmatter
-  const links = linksData.map(link => ({
-    id: uuidV4(),
-    name: link,
-  }))
+const Tech = ({ data }: { data: HomeQuery["tech"] }) => {
+  const frontmatter = data?.childMdx?.frontmatter
+  const title = frontmatter?.title
+  const linksData = frontmatter?.links
+  const links =
+    linksData?.map(link => ({
+      id: uuidV4(),
+      name: link,
+    })) ?? []
   return (
     <section id="tech">
       <SectionHeader>{title}</SectionHeader>
       <div className="flex overflow-x-scroll mt-4 space-x-4">
         {links.map(({ id }, index) => {
           const chunk = 3
-          if (index % chunk !== 0) return ""
+          if (index % chunk !== 0) return
           return <Col key={id} links={links.slice(index, index + chunk)} />
         })}
       </div>

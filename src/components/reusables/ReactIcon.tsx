@@ -1,6 +1,6 @@
 import React from "react"
 
-function FacebookIcon(props) {
+function FacebookIcon(props: { className: string }) {
   return (
     <svg
       {...props}

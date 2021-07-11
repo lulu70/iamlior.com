@@ -553,7 +553,6 @@ export type ImageSharpResize = {
 export type MdxFrontmatter = {
   title: Scalars['String'];
   seoTitle?: Maybe<Scalars['String']>;
-  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   category?: Maybe<Scalars['String']>;
   emoji?: Maybe<Scalars['String']>;
   screenshot?: Maybe<File>;
@@ -561,6 +560,7 @@ export type MdxFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   visible?: Maybe<Scalars['Boolean']>;
   position?: Maybe<Scalars['Int']>;
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   subtitle?: Maybe<Scalars['String']>;
 };
 
@@ -1193,7 +1193,6 @@ export type MdxFilterInput = {
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   seoTitle?: Maybe<StringQueryOperatorInput>;
-  links?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   emoji?: Maybe<StringQueryOperatorInput>;
   screenshot?: Maybe<FileFilterInput>;
@@ -1201,6 +1200,7 @@ export type MdxFrontmatterFilterInput = {
   tags?: Maybe<StringQueryOperatorInput>;
   visible?: Maybe<BooleanQueryOperatorInput>;
   position?: Maybe<IntQueryOperatorInput>;
+  links?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1482,7 +1482,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___fileAbsolutePath'
   | 'childrenMdx___frontmatter___title'
   | 'childrenMdx___frontmatter___seoTitle'
-  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___category'
   | 'childrenMdx___frontmatter___emoji'
   | 'childrenMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1527,6 +1526,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___visible'
   | 'childrenMdx___frontmatter___position'
+  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___subtitle'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
@@ -1583,7 +1583,6 @@ export type FileFieldsEnum =
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___seoTitle'
-  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___category'
   | 'childMdx___frontmatter___emoji'
   | 'childMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1628,6 +1627,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___visible'
   | 'childMdx___frontmatter___position'
+  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___subtitle'
   | 'childMdx___slug'
   | 'childMdx___body'
@@ -2767,7 +2767,6 @@ export type MdxFieldsEnum =
   | 'fileAbsolutePath'
   | 'frontmatter___title'
   | 'frontmatter___seoTitle'
-  | 'frontmatter___links'
   | 'frontmatter___category'
   | 'frontmatter___emoji'
   | 'frontmatter___screenshot___sourceInstanceName'
@@ -2854,6 +2853,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___tags'
   | 'frontmatter___visible'
   | 'frontmatter___position'
+  | 'frontmatter___links'
   | 'frontmatter___subtitle'
   | 'slug'
   | 'body'
@@ -3332,10 +3332,10 @@ export type SitePluginSortInput = {
   order?: Maybe<Array<Maybe<SortOrderEnum>>>;
 };
 
-export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
+export type AvatarQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_1_Query = { file?: Maybe<NewGatsbyImageFragment> };
+export type AvatarQuery = { file?: Maybe<NewGatsbyImageFragment> };
 
 export type DefaultSeoQueryQueryVariables = Exact<{ [key: string]: never; }>;
 
@@ -3370,18 +3370,18 @@ export type HomeQuery = { hero?: Maybe<{ childMdx?: Maybe<{ frontmatter?: Maybe<
       & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
     )> }> };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_1_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { mdx?: Maybe<(
+export type Unnamed_1_Query = { mdx?: Maybe<(
     Pick<Mdx, 'body'>
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
 
-export type Unnamed_3_QueryVariables = Exact<{ [key: string]: never; }>;
+export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_3_Query = { thanks?: Maybe<{ childMdx?: Maybe<(
+export type Unnamed_2_Query = { thanks?: Maybe<{ childMdx?: Maybe<(
       Pick<Mdx, 'body'>
       & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
     )> }> };

@@ -1,6 +1,6 @@
 import React from "react"
 
-function TailwindIcon(props) {
+function TailwindIcon(props: { className: string }) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
