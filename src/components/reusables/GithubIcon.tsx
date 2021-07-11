@@ -1,6 +1,6 @@
 import React from "react"
 
-const GithubIcon = props => (
+const GithubIcon = (props: { className?: string }) => (
   <svg
     version="1.1"
     role="img"

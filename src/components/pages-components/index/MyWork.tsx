@@ -6,33 +6,35 @@ import UnderlineText from "../../reusables/UnderlineText"
 import MainContext from "../../../context/MainContext"
 import getClassNamesByTabIsUsedState from "../../../helpers/getClassNamesByTabIsUsedState"
 import Pointer from "../../reusables/Pointer"
+import { HomeQuery } from "../../../../gatsby-graphql"
 
-const MyWork = ({ data, projects }) => {
-  const title = data.childMdx.frontmatter.title
+const MyWork = ({
+  data,
+  projects,
+}: {
+  data: HomeQuery["myWork"]
+  projects: HomeQuery["projects"]
+}) => {
+  const title = data?.childMdx?.frontmatter?.title
   const { tabIsUsed } = React.useContext(MainContext)
   return (
     <section id="my-work" className="">
       <SectionHeader>{title}</SectionHeader>
       <div id="projects-container" className="mt-4 space-y-12">
-        {projects.nodes.map(
-          (
-            {
-              childMdx: {
-                body,
-                frontmatter: {
-                  title,
-                  emoji,
-                  category,
-                  screenshot,
-                  visible,
-                  external,
-                  tags,
-                },
-              },
-              id,
-            },
-            index
-          ) =>
+        {projects.nodes.map((project, index) => {
+          const id = project.id
+          const body = project.childMdx?.body
+          const frontmatter = project.childMdx?.frontmatter
+          const title = frontmatter?.title ?? ""
+          const emoji = frontmatter?.emoji
+          const category = frontmatter?.category
+          const screenshot = getImage(
+            frontmatter?.screenshot?.childImageSharp?.gatsbyImageData
+          )
+          const visible = frontmatter?.visible
+          const external = frontmatter?.external ?? ""
+          const tags = frontmatter?.tags ?? []
+          return (
             visible && (
               <div
                 id="project-container"
@@ -49,7 +51,7 @@ const MyWork = ({ data, projects }) => {
                   <h4 id="title" className="text-xl font-normal mt-4">
                     {title}
                   </h4>
-                  <MDXRenderer>{body}</MDXRenderer>
+                  {body && <MDXRenderer>{body}</MDXRenderer>}
                 </div>
                 <a
                   id={"link to" + title}
@@ -60,11 +62,13 @@ const MyWork = ({ data, projects }) => {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <GatsbyImage
-                    image={getImage(screenshot)}
-                    alt={title}
-                    className="rounded-lg"
-                  />
+                  {screenshot && (
+                    <GatsbyImage
+                      image={screenshot}
+                      alt={title}
+                      className="rounded-lg"
+                    />
+                  )}
                   <Pointer />
                 </a>
                 <div id="tags-container" className="flex flex-wrap max-w-xl">
@@ -99,7 +103,8 @@ const MyWork = ({ data, projects }) => {
                 </a>
               </div>
             )
-        )}
+          )
+        })}
       </div>
     </section>
   )
