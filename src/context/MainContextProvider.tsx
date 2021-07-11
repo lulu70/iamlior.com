@@ -6,7 +6,7 @@ import MainContext, {
   setTabIsUsed,
 } from "./MainContext"
 
-const MainContextProvider = ({ children }) => {
+const MainContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [mainContextStore, mainContextDispatch] = React.useReducer(
     mainContextReducer,
     initialStoreState

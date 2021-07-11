@@ -3,7 +3,7 @@ import isBrowser from "../../helpers/isBrowser"
 import MainContext, { setDarkMode } from "../../context/MainContext"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
 
-const DarkModeSwitch = ({ tabIsUsed }) => {
+const DarkModeSwitch = ({ tabIsUsed }: { tabIsUsed: boolean }) => {
   const { darkMode, mainContextDispatch } = React.useContext(MainContext)
 
   //set dark mode from local storage

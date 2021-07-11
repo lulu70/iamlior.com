@@ -1,13 +1,18 @@
 import React from "react"
 import useRefsContext from "../../hooks/useRefsContext"
 
-const PersonSVG = props => {
-  const {
-    personRef,
-    personLeftHandRef,
-    laptopLogoRef,
-    laptopScreenLightRef,
-  } = useRefsContext()
+interface PersonSVGProps {
+  className: string
+  onPointerEnter: React.PointerEventHandler<SVGSVGElement>
+}
+
+const PersonSVG = (props: PersonSVGProps) => {
+  const refContext = useRefsContext()
+  const personRef = refContext?.personRef
+  const personLeftHandRef = refContext?.personLeftHandRef
+  const laptopLogoRef = refContext?.laptopLogoRef
+  const laptopScreenLightRef = refContext?.laptopScreenLightRef
+
   return (
     <svg
       ref={personRef}

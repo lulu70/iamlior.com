@@ -47,7 +47,7 @@ const ScrollTopButton = () => {
       </svg>
     </button>
   ) : (
-    ""
+    <span />
   )
 }
 

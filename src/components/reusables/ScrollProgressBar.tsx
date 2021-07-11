@@ -22,7 +22,7 @@ const Progress = styled.progress`
   }
 `
 const ScrollProgressBar = () => {
-  const progressRef = React.useRef()
+  const progressRef = React.useRef<HTMLProgressElement | null>(null)
   React.useEffect(() => {
     gsap.to(progressRef.current, {
       value: 100,

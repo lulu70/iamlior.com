@@ -9,10 +9,14 @@ export const links = [
   { id: 3, text: "Tech I Use", slug: "/#tech" },
   { id: 4, text: "Lets Talk", slug: "/#lets-talk" },
 ]
-const NavigationMenu = ({ className, tabIsUsed }) => {
+interface NavigationMenuProps {
+  className?: string
+  tabIsUsed: boolean
+}
+const NavigationMenu = ({ className, tabIsUsed }: NavigationMenuProps) => {
   const [isOpen, setIsOpen] = React.useState(false)
   React.useEffect(() => {
-    function handleKeydown(e) {
+    function handleKeydown(e: KeyboardEvent) {
       if (e.key === "Esc" || e.key === "Escape") {
         setIsOpen(false)
       }
@@ -64,7 +68,7 @@ const NavigationMenu = ({ className, tabIsUsed }) => {
           <>
             <button
               className="fixed inset-0 h-full w-full bg-black opacity-60 dark:opacity-90 cursor-default"
-              tabIndex="-1"
+              tabIndex={-1}
               onClick={() => setIsOpen(false)}
               aria-label="layout"
             />

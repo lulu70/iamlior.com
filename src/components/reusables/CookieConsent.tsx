@@ -14,12 +14,13 @@ const CookieConsent = () => {
       ? localStorage.getItem("cookie_concent")
       : null
     if (cookieConcent) {
-      setCookieConcent(mainContextDispatch, cookieConcent)
+      const boolCookieConcent = cookieConcent === "true"
+      setCookieConcent(mainContextDispatch, boolCookieConcent)
     }
   }, [mainContextDispatch])
 
   function handleClick() {
-    setCookieConcent(mainContextDispatch, "true")
+    setCookieConcent(mainContextDispatch, true)
     if (isBrowser()) {
       localStorage.setItem("cookie_concent", "true")
     }
@@ -48,7 +49,7 @@ const CookieConsent = () => {
       </button>
     </div>
   ) : (
-    ""
+    <span />
   )
 }
 
