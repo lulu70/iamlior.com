@@ -1,6 +1,6 @@
 import React from "react"
 
-function JavascriptIcon(props: { className: string }) {
+function JavascriptIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       {...props}

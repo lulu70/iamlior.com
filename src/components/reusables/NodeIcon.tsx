@@ -1,6 +1,6 @@
 import React from "react"
 
-function NodeIcon(props: { className: string }) {
+function NodeIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

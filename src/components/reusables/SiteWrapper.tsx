@@ -4,7 +4,7 @@ import ErrorBoundary from "./ErrorBoundary"
 import MainContextProvider from "../../context/MainContextProvider"
 import RefsContextProvider from "../../context/RefsContextProvider"
 
-const SiteWrapper = ({ children }) => {
+const SiteWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <MainContextProvider>
       <RefsContextProvider>

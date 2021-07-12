@@ -1,6 +1,6 @@
 import React from "react"
 
-function TweeterIcon(props) {
+function TweeterIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 248 204">
       <path

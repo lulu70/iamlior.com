@@ -1,6 +1,6 @@
 import React from "react"
 
-function ShopifyIcon(props: { className: string }) {
+function ShopifyIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 125">
       <path

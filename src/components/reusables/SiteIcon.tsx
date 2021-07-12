@@ -1,6 +1,6 @@
 import React from "react"
 
-function SiteIcon(props: { className: string }) {
+function SiteIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="260 110 210 160" {...props}>
       <path

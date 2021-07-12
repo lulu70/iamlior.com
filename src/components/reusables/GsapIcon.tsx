@@ -1,6 +1,6 @@
 import React from "react"
 
-function GsapIcon(props: { className: string }) {
+function GsapIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 -2 315 359" {...props}>
       <path

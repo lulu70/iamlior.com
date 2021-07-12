@@ -552,6 +552,7 @@ export type ImageSharpResize = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   seoTitle?: Maybe<Scalars['String']>;
   category?: Maybe<Scalars['String']>;
   emoji?: Maybe<Scalars['String']>;
@@ -560,7 +561,6 @@ export type MdxFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   visible?: Maybe<Scalars['Boolean']>;
   position?: Maybe<Scalars['Int']>;
-  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   subtitle?: Maybe<Scalars['String']>;
 };
 
@@ -1192,6 +1192,7 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
+  links?: Maybe<StringQueryOperatorInput>;
   seoTitle?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   emoji?: Maybe<StringQueryOperatorInput>;
@@ -1200,7 +1201,6 @@ export type MdxFrontmatterFilterInput = {
   tags?: Maybe<StringQueryOperatorInput>;
   visible?: Maybe<BooleanQueryOperatorInput>;
   position?: Maybe<IntQueryOperatorInput>;
-  links?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1481,6 +1481,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___rawBody'
   | 'childrenMdx___fileAbsolutePath'
   | 'childrenMdx___frontmatter___title'
+  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___seoTitle'
   | 'childrenMdx___frontmatter___category'
   | 'childrenMdx___frontmatter___emoji'
@@ -1526,7 +1527,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___visible'
   | 'childrenMdx___frontmatter___position'
-  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___subtitle'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
@@ -1582,6 +1582,7 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
+  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___seoTitle'
   | 'childMdx___frontmatter___category'
   | 'childMdx___frontmatter___emoji'
@@ -1627,7 +1628,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___visible'
   | 'childMdx___frontmatter___position'
-  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___subtitle'
   | 'childMdx___slug'
   | 'childMdx___body'
@@ -2766,6 +2766,7 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
+  | 'frontmatter___links'
   | 'frontmatter___seoTitle'
   | 'frontmatter___category'
   | 'frontmatter___emoji'
@@ -2853,7 +2854,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___tags'
   | 'frontmatter___visible'
   | 'frontmatter___position'
-  | 'frontmatter___links'
   | 'frontmatter___subtitle'
   | 'slug'
   | 'body'
@@ -3378,10 +3378,10 @@ export type Unnamed_1_Query = { mdx?: Maybe<(
     & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
   )> };
 
-export type Unnamed_2_QueryVariables = Exact<{ [key: string]: never; }>;
+export type ThanksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type Unnamed_2_Query = { thanks?: Maybe<{ childMdx?: Maybe<(
+export type ThanksQuery = { thanks?: Maybe<{ childMdx?: Maybe<(
       Pick<Mdx, 'body'>
       & { frontmatter?: Maybe<Pick<MdxFrontmatter, 'title'>> }
     )> }> };

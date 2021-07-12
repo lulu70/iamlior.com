@@ -8,6 +8,7 @@ import Tech from "../components/pages-components/index/Tech"
 import MyWork from "../components/pages-components/index/MyWork"
 import LetsTalk from "../components/pages-components/index/LetsTalk"
 import { HomeQuery } from "../../gatsby-graphql"
+
 export default function Home({ data }: { data: HomeQuery }) {
   //getting first paragraph of the about section for the description tag
   const description = data?.about?.childMdx?.mdxAST.children.filter(

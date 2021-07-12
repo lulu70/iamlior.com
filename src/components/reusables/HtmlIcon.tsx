@@ -1,6 +1,6 @@
 import React from "react"
 
-function HtmlIcon(props: { className: string }) {
+function HtmlIcon(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

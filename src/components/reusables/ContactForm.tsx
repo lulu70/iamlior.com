@@ -15,7 +15,12 @@ const StyledTextArea = styled.textarea`
   ${inputStyles}
 `
 
-const ContactForm = (props: { className: string }) => {
+const ContactForm = (
+  props: React.DetailedHTMLProps<
+    React.FormHTMLAttributes<HTMLFormElement>,
+    HTMLFormElement
+  >
+) => {
   const initialState = {
     "full-name": "",
     email: "",
