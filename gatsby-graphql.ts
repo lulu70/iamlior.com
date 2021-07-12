@@ -552,8 +552,8 @@ export type ImageSharpResize = {
 
 export type MdxFrontmatter = {
   title: Scalars['String'];
-  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   seoTitle?: Maybe<Scalars['String']>;
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   category?: Maybe<Scalars['String']>;
   emoji?: Maybe<Scalars['String']>;
   screenshot?: Maybe<File>;
@@ -1192,8 +1192,8 @@ export type MdxFilterInput = {
 
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
-  links?: Maybe<StringQueryOperatorInput>;
   seoTitle?: Maybe<StringQueryOperatorInput>;
+  links?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   emoji?: Maybe<StringQueryOperatorInput>;
   screenshot?: Maybe<FileFilterInput>;
@@ -1481,8 +1481,8 @@ export type FileFieldsEnum =
   | 'childrenMdx___rawBody'
   | 'childrenMdx___fileAbsolutePath'
   | 'childrenMdx___frontmatter___title'
-  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___seoTitle'
+  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___category'
   | 'childrenMdx___frontmatter___emoji'
   | 'childrenMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1582,8 +1582,8 @@ export type FileFieldsEnum =
   | 'childMdx___rawBody'
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
-  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___seoTitle'
+  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___category'
   | 'childMdx___frontmatter___emoji'
   | 'childMdx___frontmatter___screenshot___sourceInstanceName'
@@ -2766,8 +2766,8 @@ export type MdxFieldsEnum =
   | 'rawBody'
   | 'fileAbsolutePath'
   | 'frontmatter___title'
-  | 'frontmatter___links'
   | 'frontmatter___seoTitle'
+  | 'frontmatter___links'
   | 'frontmatter___category'
   | 'frontmatter___emoji'
   | 'frontmatter___screenshot___sourceInstanceName'
