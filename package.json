@@ -11,6 +11,9 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean && yarn start",
     "format": "prettier --write \"src/**/*.js\"",
+    "type-check": "tsc --noEmit --watch",
+    "ggl-types": "graphql-codegen",
+    "ggl-types:watch": "graphql-codegen --config codegen.yml -w",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\"",
     "push": "git push && ntl open",
     "deploy": "yarn build && ntl deploy --prod --message \"DEPLOYED_LOCALLY\" && ntl open"
@@ -24,6 +27,7 @@
     "gatsby-plugin-advanced-sitemap": "^1.6.0",
     "gatsby-plugin-canonical-urls": "^3.0.0",
     "gatsby-plugin-google-analytics": "^3.8.0",
+    "gatsby-plugin-graphql-codegen": "^3.0.0",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-manifest": "^3.0.0",
     "gatsby-plugin-mdx": "^2.0.0",
@@ -44,9 +48,16 @@
     "twin.macro": "^2.3.0"
   },
   "devDependencies": {
+    "@types/node": "^16.3.1",
+    "@types/react": "^17.0.14",
+    "@types/react-dom": "^17.0.9",
+    "@types/react-helmet": "^6.1.2",
+    "@types/styled-components": "^5.1.11",
+    "@types/uuid": "^8.3.1",
     "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.20",
     "js-conditional-compile-loader": "^1.0.14",
-    "prettier": "2.2.1"
+    "prettier": "2.2.1",
+    "typescript": "^4.3.5"
   },
   "repository": {
     "type": "git",

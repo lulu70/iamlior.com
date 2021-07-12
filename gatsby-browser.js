@@ -1,7 +1,6 @@
 import React from "react"
 import SiteWrapper from "./src/components/reusables/SiteWrapper"
 import isBrowser from "./src/helpers/isBrowser"
-
 export const wrapRootElement = ({ element }) => {
   // Display Browser is not supported for IE
   if (isBrowser()) {
