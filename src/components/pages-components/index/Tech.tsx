@@ -21,6 +21,7 @@ import StyledComponentsIcon from "../../reusables/StyledComponentsIcon"
 import GsapIcon from "../../reusables/GsapIcon"
 import ReactSpringIcon from "../../reusables/ReactSpringIcon"
 import { HomeQuery, Maybe } from "../../../../gatsby-graphql"
+import TypescriptIcon from "../../reusables/TypescriptIcon"
 
 const Col = ({ links }: { links: { id: string; name: Maybe<string> }[] }) => {
   const icons = {
@@ -44,6 +45,7 @@ const Col = ({ links }: { links: { id: string; name: Maybe<string> }[] }) => {
     Apollo: ApolloIcon,
     Redux: ReduxIcon,
     "React Spring": ReactSpringIcon,
+    Typescript: TypescriptIcon,
   }
   return (
     <div className="space-y-4 pb-4">
