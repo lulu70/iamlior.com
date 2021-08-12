@@ -35,7 +35,6 @@ function SEO({
         const metaUrl = location
           ? siteMetadata.siteUrl + location.pathname
           : siteMetadata.siteUrl
-        console.log(lang)
         return (
           <Helmet
             htmlAttributes={{
