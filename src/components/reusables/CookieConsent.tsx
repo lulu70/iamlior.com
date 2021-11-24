@@ -3,6 +3,11 @@ import { Link } from "gatsby"
 import MainContext, { setCookieConcent } from "../../context/MainContext"
 import isBrowser from "../../helpers/isBrowser"
 import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUsedState"
+declare global {
+  interface Window {
+    dataLayer: Record<string, any>[]
+  }
+}
 
 const CookieConsent = () => {
   const { cookieConcent, mainContextDispatch, tabIsUsed } = React.useContext(
@@ -10,11 +15,9 @@ const CookieConsent = () => {
   )
   //set cookie concent from local storage
   React.useEffect(() => {
-    const cookieConcent = isBrowser()
-      ? localStorage.getItem("cookie_concent")
-      : null
-    if (cookieConcent) {
-      const boolCookieConcent = cookieConcent === "true"
+    const concent = isBrowser() ? localStorage.getItem("cookie_concent") : null
+    if (concent) {
+      const boolCookieConcent = concent === "true"
       setCookieConcent(mainContextDispatch, boolCookieConcent)
     }
   }, [mainContextDispatch])
@@ -23,6 +26,7 @@ const CookieConsent = () => {
     setCookieConcent(mainContextDispatch, true)
     if (isBrowser()) {
       localStorage.setItem("cookie_concent", "true")
+      window.dataLayer.push({ event: "Consent Button Click" })
     }
   }
   return !cookieConcent ? (
