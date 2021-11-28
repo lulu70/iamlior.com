@@ -260,6 +260,8 @@ export type Site = Node & {
   siteMetadata?: Maybe<SiteSiteMetadata>;
   port?: Maybe<Scalars['Int']>;
   host?: Maybe<Scalars['String']>;
+  polyfill?: Maybe<Scalars['Boolean']>;
+  pathPrefix?: Maybe<Scalars['String']>;
   id: Scalars['ID'];
   parent?: Maybe<Node>;
   children: Array<Node>;
@@ -551,6 +553,7 @@ export type ImageSharpResize = {
 export type MdxFrontmatter = {
   title: Scalars['String'];
   seoTitle?: Maybe<Scalars['String']>;
+  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   category?: Maybe<Scalars['String']>;
   emoji?: Maybe<Scalars['String']>;
   screenshot?: Maybe<File>;
@@ -558,7 +561,6 @@ export type MdxFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   visible?: Maybe<Scalars['Boolean']>;
   position?: Maybe<Scalars['Int']>;
-  links?: Maybe<Array<Maybe<Scalars['String']>>>;
   subtitle?: Maybe<Scalars['String']>;
 };
 
@@ -691,10 +693,10 @@ export type SitePluginPluginOptions = {
   include_favicon?: Maybe<Scalars['Boolean']>;
   cacheDigest?: Maybe<Scalars['String']>;
   id?: Maybe<Scalars['String']>;
-  includeInDevelopment?: Maybe<Scalars['Boolean']>;
   defaultDataLayer?: Maybe<SitePluginPluginOptionsDefaultDataLayer>;
-  enableWebVitalsTracking?: Maybe<Scalars['Boolean']>;
+  includeInDevelopment?: Maybe<Scalars['Boolean']>;
   routeChangeEventName?: Maybe<Scalars['String']>;
+  enableWebVitalsTracking?: Maybe<Scalars['Boolean']>;
   selfHostedOrigin?: Maybe<Scalars['String']>;
   pathCheck?: Maybe<Scalars['Boolean']>;
   allExtensions?: Maybe<Scalars['Boolean']>;
@@ -903,6 +905,8 @@ export type QuerySiteArgs = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  polyfill?: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -1198,6 +1202,7 @@ export type MdxFilterInput = {
 export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   seoTitle?: Maybe<StringQueryOperatorInput>;
+  links?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   emoji?: Maybe<StringQueryOperatorInput>;
   screenshot?: Maybe<FileFilterInput>;
@@ -1205,7 +1210,6 @@ export type MdxFrontmatterFilterInput = {
   tags?: Maybe<StringQueryOperatorInput>;
   visible?: Maybe<BooleanQueryOperatorInput>;
   position?: Maybe<IntQueryOperatorInput>;
-  links?: Maybe<StringQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
 };
 
@@ -1487,6 +1491,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___fileAbsolutePath'
   | 'childrenMdx___frontmatter___title'
   | 'childrenMdx___frontmatter___seoTitle'
+  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___category'
   | 'childrenMdx___frontmatter___emoji'
   | 'childrenMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1531,7 +1536,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___visible'
   | 'childrenMdx___frontmatter___position'
-  | 'childrenMdx___frontmatter___links'
   | 'childrenMdx___frontmatter___subtitle'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
@@ -1588,6 +1592,7 @@ export type FileFieldsEnum =
   | 'childMdx___fileAbsolutePath'
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___seoTitle'
+  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___category'
   | 'childMdx___frontmatter___emoji'
   | 'childMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1632,7 +1637,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___visible'
   | 'childMdx___frontmatter___position'
-  | 'childMdx___frontmatter___links'
   | 'childMdx___frontmatter___subtitle'
   | 'childMdx___slug'
   | 'childMdx___body'
@@ -2036,6 +2040,8 @@ export type SiteFieldsEnum =
   | 'siteMetadata___image'
   | 'port'
   | 'host'
+  | 'polyfill'
+  | 'pathPrefix'
   | 'id'
   | 'parent___id'
   | 'parent___parent___id'
@@ -2137,6 +2143,8 @@ export type SiteFilterInput = {
   siteMetadata?: Maybe<SiteSiteMetadataFilterInput>;
   port?: Maybe<IntQueryOperatorInput>;
   host?: Maybe<StringQueryOperatorInput>;
+  polyfill?: Maybe<BooleanQueryOperatorInput>;
+  pathPrefix?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
   parent?: Maybe<NodeFilterInput>;
   children?: Maybe<NodeFilterListInput>;
@@ -2207,10 +2215,10 @@ export type SitePluginPluginOptionsFilterInput = {
   include_favicon?: Maybe<BooleanQueryOperatorInput>;
   cacheDigest?: Maybe<StringQueryOperatorInput>;
   id?: Maybe<StringQueryOperatorInput>;
-  includeInDevelopment?: Maybe<BooleanQueryOperatorInput>;
   defaultDataLayer?: Maybe<SitePluginPluginOptionsDefaultDataLayerFilterInput>;
-  enableWebVitalsTracking?: Maybe<BooleanQueryOperatorInput>;
+  includeInDevelopment?: Maybe<BooleanQueryOperatorInput>;
   routeChangeEventName?: Maybe<StringQueryOperatorInput>;
+  enableWebVitalsTracking?: Maybe<BooleanQueryOperatorInput>;
   selfHostedOrigin?: Maybe<StringQueryOperatorInput>;
   pathCheck?: Maybe<BooleanQueryOperatorInput>;
   allExtensions?: Maybe<BooleanQueryOperatorInput>;
@@ -2436,10 +2444,10 @@ export type SitePageFieldsEnum =
   | 'pluginCreator___pluginOptions___include_favicon'
   | 'pluginCreator___pluginOptions___cacheDigest'
   | 'pluginCreator___pluginOptions___id'
-  | 'pluginCreator___pluginOptions___includeInDevelopment'
   | 'pluginCreator___pluginOptions___defaultDataLayer___type'
-  | 'pluginCreator___pluginOptions___enableWebVitalsTracking'
+  | 'pluginCreator___pluginOptions___includeInDevelopment'
   | 'pluginCreator___pluginOptions___routeChangeEventName'
+  | 'pluginCreator___pluginOptions___enableWebVitalsTracking'
   | 'pluginCreator___pluginOptions___selfHostedOrigin'
   | 'pluginCreator___pluginOptions___pathCheck'
   | 'pluginCreator___pluginOptions___allExtensions'
@@ -2777,6 +2785,7 @@ export type MdxFieldsEnum =
   | 'fileAbsolutePath'
   | 'frontmatter___title'
   | 'frontmatter___seoTitle'
+  | 'frontmatter___links'
   | 'frontmatter___category'
   | 'frontmatter___emoji'
   | 'frontmatter___screenshot___sourceInstanceName'
@@ -2863,7 +2872,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___tags'
   | 'frontmatter___visible'
   | 'frontmatter___position'
-  | 'frontmatter___links'
   | 'frontmatter___subtitle'
   | 'slug'
   | 'body'
@@ -3298,11 +3306,11 @@ export type SitePluginFieldsEnum =
   | 'pluginOptions___include_favicon'
   | 'pluginOptions___cacheDigest'
   | 'pluginOptions___id'
-  | 'pluginOptions___includeInDevelopment'
   | 'pluginOptions___defaultDataLayer___type'
   | 'pluginOptions___defaultDataLayer___value___platform'
-  | 'pluginOptions___enableWebVitalsTracking'
+  | 'pluginOptions___includeInDevelopment'
   | 'pluginOptions___routeChangeEventName'
+  | 'pluginOptions___enableWebVitalsTracking'
   | 'pluginOptions___selfHostedOrigin'
   | 'pluginOptions___pathCheck'
   | 'pluginOptions___allExtensions'
