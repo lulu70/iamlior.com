@@ -64,7 +64,10 @@ export const query = graphql`
     }
     projects: allFile(
       filter: {
-        childMdx: { fileAbsolutePath: { regex: "/index/my-work/projects/" } }
+        childMdx: {
+          fileAbsolutePath: { regex: "/index/my-work/projects/" }
+          frontmatter: { visible: { eq: true } }
+        }
       }
       sort: { fields: childrenMdx___frontmatter___position }
     ) {

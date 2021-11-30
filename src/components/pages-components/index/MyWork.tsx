@@ -17,14 +17,11 @@ const MyWork = ({
 }) => {
   const title = data?.childMdx?.frontmatter?.title
   const { tabIsUsed } = React.useContext(MainContext)
-  const visibleProjects = projects.nodes.filter(
-    ({ childMdx }) => childMdx?.frontmatter?.visible
-  )
   return (
     <section id="my-work" className="">
       <SectionHeader>{title}</SectionHeader>
       <div id="projects-container" className="mt-4 space-y-12">
-        {visibleProjects.map((project, index) => {
+        {projects.nodes.map((project, index) => {
           const id = project.id
           const body = project.childMdx?.body
           const frontmatter = project.childMdx?.frontmatter
