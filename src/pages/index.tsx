@@ -83,7 +83,6 @@ export const query = graphql`
             }
             external
             tags
-            visible
           }
           body
         }

@@ -3380,7 +3380,7 @@ export type HomeQuery = { hero?: Maybe<{ childMdx?: Maybe<{ frontmatter?: Maybe<
       & { childMdx?: Maybe<(
         Pick<Mdx, 'body'>
         & { frontmatter?: Maybe<(
-          Pick<MdxFrontmatter, 'title' | 'category' | 'emoji' | 'external' | 'tags' | 'visible'>
+          Pick<MdxFrontmatter, 'title' | 'category' | 'emoji' | 'external' | 'tags'>
           & { screenshot?: Maybe<NewGatsbyImageFragment> }
         )> }
       )> }
