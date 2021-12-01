@@ -15,13 +15,20 @@ const MyWork = ({
   data: HomeQuery["myWork"]
   projects: HomeQuery["projects"]
 }) => {
-  const title = data?.childMdx?.frontmatter?.title
   const { tabIsUsed } = React.useContext(MainContext)
+
+  const sectionTitle = data?.childMdx?.frontmatter?.title
+  const order = data?.childMdx?.frontmatter?.order ?? []
+  const orderedProjects = [...projects.nodes].sort((a, b) => {
+    const aTitle = a.childMdx?.frontmatter?.title ?? ""
+    const bTitle = b.childMdx?.frontmatter?.title ?? ""
+    return order.indexOf(aTitle) - order.indexOf(bTitle)
+  })
   return (
     <section id="my-work" className="">
-      <SectionHeader>{title}</SectionHeader>
+      <SectionHeader>{sectionTitle}</SectionHeader>
       <div id="projects-container" className="mt-4 space-y-12">
-        {projects.nodes.map((project, index) => {
+        {orderedProjects.map((project, index) => {
           const id = project.id
           const body = project.childMdx?.body
           const frontmatter = project.childMdx?.frontmatter

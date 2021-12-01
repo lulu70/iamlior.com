@@ -59,6 +59,7 @@ export const query = graphql`
       childMdx {
         frontmatter {
           title
+          order
         }
       }
     }
@@ -69,7 +70,6 @@ export const query = graphql`
           frontmatter: { visible: { eq: true } }
         }
       }
-      sort: { fields: childrenMdx___frontmatter___position }
     ) {
       nodes {
         id
