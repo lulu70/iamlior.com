@@ -554,7 +554,6 @@ export type MdxFrontmatter = {
   title: Scalars['String'];
   seoTitle?: Maybe<Scalars['String']>;
   links?: Maybe<Array<Maybe<Scalars['String']>>>;
-  order?: Maybe<Array<Maybe<Scalars['String']>>>;
   category?: Maybe<Scalars['String']>;
   emoji?: Maybe<Scalars['String']>;
   screenshot?: Maybe<File>;
@@ -562,6 +561,7 @@ export type MdxFrontmatter = {
   tags?: Maybe<Array<Maybe<Scalars['String']>>>;
   visible?: Maybe<Scalars['Boolean']>;
   subtitle?: Maybe<Scalars['String']>;
+  order?: Maybe<Array<Maybe<Scalars['String']>>>;
 };
 
 export type MdxHeadingMdx = {
@@ -1203,7 +1203,6 @@ export type MdxFrontmatterFilterInput = {
   title?: Maybe<StringQueryOperatorInput>;
   seoTitle?: Maybe<StringQueryOperatorInput>;
   links?: Maybe<StringQueryOperatorInput>;
-  order?: Maybe<StringQueryOperatorInput>;
   category?: Maybe<StringQueryOperatorInput>;
   emoji?: Maybe<StringQueryOperatorInput>;
   screenshot?: Maybe<FileFilterInput>;
@@ -1211,6 +1210,7 @@ export type MdxFrontmatterFilterInput = {
   tags?: Maybe<StringQueryOperatorInput>;
   visible?: Maybe<BooleanQueryOperatorInput>;
   subtitle?: Maybe<StringQueryOperatorInput>;
+  order?: Maybe<StringQueryOperatorInput>;
 };
 
 export type FileFilterInput = {
@@ -1492,7 +1492,6 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___title'
   | 'childrenMdx___frontmatter___seoTitle'
   | 'childrenMdx___frontmatter___links'
-  | 'childrenMdx___frontmatter___order'
   | 'childrenMdx___frontmatter___category'
   | 'childrenMdx___frontmatter___emoji'
   | 'childrenMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1537,6 +1536,7 @@ export type FileFieldsEnum =
   | 'childrenMdx___frontmatter___tags'
   | 'childrenMdx___frontmatter___visible'
   | 'childrenMdx___frontmatter___subtitle'
+  | 'childrenMdx___frontmatter___order'
   | 'childrenMdx___slug'
   | 'childrenMdx___body'
   | 'childrenMdx___excerpt'
@@ -1593,7 +1593,6 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___title'
   | 'childMdx___frontmatter___seoTitle'
   | 'childMdx___frontmatter___links'
-  | 'childMdx___frontmatter___order'
   | 'childMdx___frontmatter___category'
   | 'childMdx___frontmatter___emoji'
   | 'childMdx___frontmatter___screenshot___sourceInstanceName'
@@ -1638,6 +1637,7 @@ export type FileFieldsEnum =
   | 'childMdx___frontmatter___tags'
   | 'childMdx___frontmatter___visible'
   | 'childMdx___frontmatter___subtitle'
+  | 'childMdx___frontmatter___order'
   | 'childMdx___slug'
   | 'childMdx___body'
   | 'childMdx___excerpt'
@@ -2786,7 +2786,6 @@ export type MdxFieldsEnum =
   | 'frontmatter___title'
   | 'frontmatter___seoTitle'
   | 'frontmatter___links'
-  | 'frontmatter___order'
   | 'frontmatter___category'
   | 'frontmatter___emoji'
   | 'frontmatter___screenshot___sourceInstanceName'
@@ -2873,6 +2872,7 @@ export type MdxFieldsEnum =
   | 'frontmatter___tags'
   | 'frontmatter___visible'
   | 'frontmatter___subtitle'
+  | 'frontmatter___order'
   | 'slug'
   | 'body'
   | 'excerpt'

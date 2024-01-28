@@ -20,7 +20,7 @@ export default function Home({ data }: { data: HomeQuery }) {
       <Layout>
         <Hero data={data.hero} />
         <About data={data.about} />
-        <MyWork data={data.myWork} projects={data.projects} />
+        {/* <MyWork data={data.myWork} projects={data.projects} /> */}
         <Tech data={data.tech} />
         <LetsTalk data={data.letsTalk} />
       </Layout>

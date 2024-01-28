@@ -5,7 +5,7 @@ import getClassNamesByTabIsUsedState from "../../helpers/getClassNamesByTabIsUse
 export const links = [
   { id: 0, text: "Hi, I Am Lior", slug: "/" },
   { id: 1, text: "About Me", slug: "/#about" },
-  { id: 2, text: "My Work", slug: "/#my-work" },
+  // { id: 2, text: "My Work", slug: "/#my-work" },
   { id: 3, text: "Tech I Use", slug: "/#tech" },
   { id: 4, text: "Lets Talk", slug: "/#lets-talk" },
 ]
